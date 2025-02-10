@@ -1,0 +1,304 @@
+<!doctype html>
+<html data-bs-theme="">
+    <head>
+                <title>Email Security Standards - holzsec</title>
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            
+
+            
+                <link  rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+            
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../../assets/css/root.min.css">
+            <link rel="stylesheet" href="../../assets/css/main.min.css">
+                <script src="../../search/main.js"></script>
+
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+
+        
+            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">holzsec</span>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+    
+        <li class="nav-item" id="component-menu">
+            <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="../..">[Welcome to MkDocs]</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class=" active 
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Docs]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../" class="dropdown-item text-decoration-none ">holzsec</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="./" class="dropdown-item text-decoration-none  active ">Email Security Standards</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../mikrotik/" class="dropdown-item text-decoration-none ">Routerboard Home Setup</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../storage/" class="dropdown-item text-decoration-none ">Unraid</a>
+    </li>
+<!-- endblock -->
+                            </ul>
+                        </li>
+            </ul>
+        </li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block search -->
+                <li class="nav-item">
+                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="md-search-icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </li>
+                <!--  endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main><!-- block search -->
+<div class="collapse" id="collapseExample">
+    <div role="search" class="search-box">
+        <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+            <input type="text" name="q" class="search-query"
+            placeholder="Search docs" title="Type search term here" />
+        </form>
+    </div>
+</div>
+<!-- endblock -->
+
+                
+                        <!-- block content -->
+<section class="container post" id="component-content">
+    <article>
+        <header>
+            
+                <h1 class=" title" id="component-title">Email Security Standards</h1>
+            
+        </header>
+        <p><h1 id="email-security-standards">Email Security Standards</h1>
+<p><img alt="Email Standards" src="/assets/img/emailstandards.jpg" /></p>
+<h2 id="1-spf">1. SPF</h2>
+<p><strong>SPF</strong> was first defined in RFC4408 [@RFC4408] and updated in RFC7208 [@RFC7208]. It enables restriction of sending hosts by listing IPs, IP ranges, or domain names. SPF is a TXT record that begins with a version field (<code>v=spf1</code>) and can include multiple directives. A directive includes an optional qualifier (<code>+</code>, <code>-</code>, <code>?</code>, <code>`) and a mechanism (</code>all<code>,</code>include<code>,</code>a<code>,</code>mx<code>,</code>ptr<code>,</code>ip4<code>,</code>ip6<code>,</code>exists`).</p>
+<p>Mechanisms are evaluated from left to right and can result in a match, no match, or exception. A match returns the qualifier:</p>
+<ul>
+<li><code>+</code>: Pass</li>
+<li><code>-</code>: Fail</li>
+<li>``: Softfail</li>
+<li><code>?</code>: Neutral</li>
+</ul>
+<p>If no match is found, the next mechanism is evaluated. Some mechanisms cause DNS lookups (<code>include</code>, <code>a</code>, <code>mx</code>, <code>ptr</code>, <code>exists</code>). The maximum number of DNS lookups is limited to 10. The check function should be limited in time but should allow at least 20 seconds. Exceeding the limit should result in a <em>temperror</em>. If no mechanism matches, the check should return "neutral," which is the same as the <code>?all</code> mechanism at the end. If no SPF record is found, it returns "None," and a permanent error (permerror) occurs for syntax errors. Finally, it is recommended to stay within the legacy max length for DNS requests of 512 octets.</p>
+<h2 id="2-dkim">2. DKIM</h2>
+<p><strong>DKIM</strong> - DomainKeys Identified Mail was introduced in RFC4871 [@RFC4871] and updated in RFC6376 [@RFC6376]. DKIM signatures are used to sign the email header and body. It provides authenticity for the email sender and ensures that data was not modified during transit. Sending mail providers publish a TXT record of a specific format. Selectors allow multiple DKIM entries for a single domain. The receiver can verify the signature using the selector to request the associated DKIM DNS entry.</p>
+<p>The format of a DKIM signature is a tag list. Important tags are:</p>
+<ul>
+<li><code>v</code>: Version field (currently 1)</li>
+<li><code>a</code>: Signing algorithm (RFC6376 mentions SHA1 and SHA256)</li>
+<li><code>b</code>: Signature data</li>
+<li><code>bh</code>: Body hash</li>
+<li><code>d</code>: Domain</li>
+<li><code>s</code>: Selector</li>
+</ul>
+<p>Optional tags include:</p>
+<ul>
+<li><code>c</code></li>
+</ul>
+<p>: Canonicalization (either "simple" or "relaxed")</p>
+<ul>
+<li>Default is "simple," which allows no modification in transit</li>
+<li>"Relaxed" header allows lowercase conversion of header field names and whitespace adjustments</li>
+<li>
+<p>"Relaxed" body allows removing whitespaces at the end of lines and ignoring empty lines</p>
+</li>
+<li>
+<p><code>t</code>: Signature timestamp (number of seconds from Jan 1, 1970 UTC)</p>
+</li>
+<li>
+<p><code>x</code>: Signature expiration time</p>
+</li>
+<li>
+<p><code>i</code>: Sender email address</p>
+</li>
+<li>
+<p><code>z</code>: List of original message headers</p>
+</li>
+</ul>
+<p>The DKIM DNS entry includes three tags:</p>
+<ul>
+<li><code>v</code>: Version field</li>
+<li><code>k</code>: Algorithm</li>
+<li><code>p</code>: Public key</li>
+</ul>
+<p>With the right selector, the public key can be retrieved, enabling signature verification.</p>
+<h2 id="3-dmarc">3. DMARC</h2>
+<p><strong>DMARC</strong> [@RFC7489] - Domain-based Message Authentication, Reporting, and Conformance matches the From header to an authenticated domain via SPF (MAIL FROM) or DKIM (<code>d=</code>). DMARC entries are of type TXT and have a specific format. An example DMARC entry might look like this:</p>
+<p>The first two tags are required, and others are optional:</p>
+<ul>
+<li>Required:</li>
+<li><code>v=</code>: Version field (currently DMARC1)</li>
+<li><code>p=</code>: Policy to apply in case of a mismatch (none: no action, quarantine: mark as spam, reject: reject mail during the SMTP transaction)</li>
+<li>Optional:</li>
+<li><code>pct=</code>: Percentage of emails to which the policy should be applied (default 100%)</li>
+<li><code>adkim=</code>: Strict/relaxed domain match for DKIM</li>
+<li><code>aspf=</code>: Strict/relaxed domain match for SPF</li>
+<li><code>fo</code>: Failure report options (<code>$&lt;"0"/"1"/"d"/"s"&gt;$</code>)</li>
+<li><code>rf=</code>: Format for failure reports (default "afrf")</li>
+<li><code>ri=</code>: Interval between aggregated reports (default 86400s = 24h)</li>
+<li><code>rua=</code>: Email address for sending aggregated reports</li>
+<li><code>ruf=</code>: Address for sending message-specific failure information</li>
+<li><code>sp=</code>: Set a different policy (p tag options) for subdomains</li>
+</ul>
+<h2 id="6-dane">6. DANE</h2>
+<p><strong>DANE</strong> <a href="https://datatracker.ietf.org/doc/html/rfc6698">@RFC6698</a> - DNS-Based Authentication of Named Entities allows stating valid certificates for a domain via DNS records. This replaces the necessity for CAs as trusted third parties for TLS. Authentication of named entities is realized via TLSA records. In order to trust and guarantee the authenticity of TLSA records (to prevent MITM and DNS cache poisoning scenarios), it requires using DNSSEC-capable resolvers. To support multiple certificates for multiple applications under one domain, TLSA records follow a specific format. The numbers before the certificate association data field specify how to handle the data, what data it includes, and how it is presented.</p>
+<ol>
+<li><code>$&lt;0-3&gt;$</code> Certificate Usage provides four options on how to handle the certificate-association-data to verify the TLS server certificate:</li>
+<li>0) Specifies CA cert., valid trust chain required (<em>CA constraint</em>)</li>
+<li>
+<ol>
+<li>Certificate represents end-entity cert., valid trust chain required (<em>service cert. constraint</em>)</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Specifies CA cert., no valid trust chain required (<em>trust anchor assertion</em>)</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Specifies end-entity cert., no valid trust chain required (<em>domain-issued cert.</em>)</li>
+</ol>
+</li>
+<li><code>$&lt;0-1&gt;$</code> TLSA Selectors specify what information is included in the certificate data:</li>
+<li>0) Whole certificate is hashed, certificate association data has to be updated for each certificate renewal</li>
+<li>
+<ol>
+<li>Only <code>SubjectPublicKeyInfo</code> is hashed, no update required if the same private key is used</li>
+</ol>
+</li>
+<li><code>$&lt;0-2&gt;$</code> TLSA Matching Types specify the representation type of certificate-association-data:</li>
+<li>0) Raw data</li>
+<li>
+<ol>
+<li>SHA-256 hash</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>SHA-512 hash</li>
+</ol>
+</li>
+</ol>
+<h2 id="7-dnssec">7. DNSSEC</h2>
+<p>(First introduced in 1999 with RFC2535 [@RFC2535], reworked in 2005 with RFC4033) - Provides authenticity for DNS records. Authenticity is realized by signing DNS entries. DNS entries of the same type are grouped into Resource Record Sets (RRsets). Each zone uses a private zone signing key (ZSK) to sign RRsets and publishes them as RRSIG entries. A resolver can verify the signature using the public ZSK stored in a DNSKEY DNS entry.</p>
+<p>Another layer of signing keys is introduced: key signing keys (KSK) are used to sign ZSK. Verification again uses a DNSKEY entry that contains the public KSK. From a security perspective, the KSK is like the key to your front door, while the ZSK is used for your inner doors. By using two keys, the ZSK can be changed more easily, with shorter key lengths, reducing the size of DNS responses and verification time.</p>
+<p>The next step is to provide a Delegation-Signer (DS) record, a signed hash of the KSK in the parent zone, to establish a chain of trust. This step is repeated for each domain level until the root zone is reached. Changing the KSK requires updating the entries in the parent zones.</p></p>
+    </article>
+</section>
+<!-- endblock -->
+                
+                
+            </main>
+
+            
+                    <!-- block preview -->
+    <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
+        <div class="col themed-grid-col">
+            <a rel="prev" href="../" class="nav-link">
+                <i class="fa fa-arrow-left"></i> Previous
+            </a>
+        </div>
+        <div class="col themed-grid-col"></div>
+        <div class="col themed-grid-col">
+            <a rel="next" href="../mikrotik/" class="nav-link">
+                Next <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+<!-- endblock -->
+            
+
+            
+                    <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+            
+        </div>
+
+            <script>var base_url = '../..';</script>
+            <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../../assets/js/main.min.js""></script>
+                <script src="../../search/main.js" defer></script>
+
+    </body>
+
+</html>
