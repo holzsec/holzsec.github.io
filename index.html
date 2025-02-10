@@ -43,7 +43,7 @@
         
 
         
-            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">holzsec</span>
+            <span class="bold fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">holzsec</span>
         
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
@@ -62,25 +62,25 @@
             <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class=" active 
-                            nav-link text-gray text-decoration-none" href=".">[holzsec]</a>
+                            nav-link text-gray text-decoration-none" href=".">[Home]</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="
-                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Docs]</a>
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Posts]</a>
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="docs/emailstandards/" class="dropdown-item text-decoration-none ">Email Security Standards</a>
+        <a href="posts/emailstandards/" class="dropdown-item text-decoration-none ">Email Security Standards</a>
     </li>
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="docs/mikrotik/" class="dropdown-item text-decoration-none ">Routerboard Home Setup</a>
+        <a href="posts/mikrotik/" class="dropdown-item text-decoration-none ">Mikrotik Routerboard Home Setup</a>
     </li>
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="docs/storage/" class="dropdown-item text-decoration-none ">Unraid</a>
+        <a href="posts/storage/" class="dropdown-item text-decoration-none ">Unraid</a>
     </li>
 <!-- endblock -->
                             </ul>
@@ -134,20 +134,23 @@
     <div class="sidebar navbar-collapse collapse card">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#holzsec" class="nav-link">holzsec</a>
-              <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#about" class="nav-link">About</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#research" class="nav-link">Research</a>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#talks" class="nav-link">Talks</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-bs-level="2"><a href="#publications" class="nav-link">Publications</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#awards" class="nav-link">Awards</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -161,13 +164,144 @@
     <article>
         <header>
             
-                <h1 class=" title" id="component-title">holzsec</h1>
             
         </header>
-        <p><h1 id="holzsec">holzsec</h1>
+        <p><p align="center">
+<img src="../assets/img/profile.jpg" style="height:30rem; margin: auto;" />
+</p>
+
 <h2 id="about">About</h2>
-<h2 id="research">Research</h2>
-<h2 id="publications">Publications</h2></p>
+<p>Hi, I am currently working towards my PhD degree at University of Vienna. During my bachelor studies I focused on penetration testing, evaluating antivirus solutions by writing custom malware and network scanning. In my bachelor thesis I adapted ZMAP to internetwide IPv6 scanning and measured active subnets in austrian IPv6 allocations. During my master studies I joined Team ERIS as a junior researcher. With my supervisor Johanna, we found an entry point for Internet-measurements in Austria (<a href="https://aim.sba-research.org">aim.sba-research.org</a>). I am now pursuing a PhD in that field with the focus on measuring Internet standard adoption and compliance.</p>
+<h2 id="talks">Talks</h2>
+<ul>
+<li>🇦🇹 2025, Feb 25th, Security Meetup, <em>From Ping to Blackout: Active Measurements on Internet Disruptions in Ukraine Kherson</em> (Dynatrace, Vienna, AT).</li>
+<li>🇦🇹 2025, Feb 24th, <a href="https://atnog.at/?tribe_events=atnog-2025-1" target="_blank">ATNOG 25/1</a>, <em>Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen</em> (Linz AG, Linz, AT).</li>
+<li>🇦🇹 2024, Sept 18th, <a href="https://seminar.bundesheer.at/pdfs/Prog2024/ProgKonferenz2024.pdf" target="_blank">IKT</a>, <em>Analyse rerouting Internet in Kherson</em> (Vienna, AT).</li>
+<li>🇪🇸 2024, Nov 05th, <a href="https://conferences.sigcomm.org/imc/2024/program" target="_blank">IMC</a>, <em>Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources</em> (Madrid, ES).</li>
+<li>🇺🇸 2022, July, <a href="https://www.usenix.org/conference/atc22/presentation/holzbauer"  target="_blank">USENIX ATC</a>, <em>Not That Simple: Email Delivery in the 21st Century</em> (Carlsbad, US).</li>
+</ul>
+<h2 id="publications">Publications</h2>
+<hr />
+<h5 id="destination-reachable-what-icmpv6-error-messages-reveal-about-their-sources"><strong>Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources</strong> <br></h5>
+<p><strong>F Holzbauer</strong>, Markus Maier, Johanna Ullrich   <br>
+  <em>Proceedings of the 2024 ACM Internet Measurement Conference (IMC '24), 280-294</em></p>
+<blockquote>
+<p><a href="https://github.com/sbaresearch/icmpv6-destination-reachable/blob/main/publication/imc24_destination_reachable_paper.pdf" target="_blank">PAPER</a>; <a href="https://github.com/sbaresearch/icmpv6-destination-reachable/blob/main/publication/imc24_destination_reachable_slides.pdf" target="_blank">SLIDES</a>; <a href="https://github.com/sbaresearch/icmpv6-destination-reachable" target="_blank">CODE <i class="fa fa-lg fa-github" aria-hidden="true"></i> </a>
+ 
+<details>
+    <summary>BIBTEX</summary>
+
+<pre><code class="language-bibtex">@inproceedings{holzbauer2024reachable,
+  title     = {Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources},
+  author    = {Florian Holzbauer and Markus Maier and Johanna Ullrich},
+  booktitle = {Proceedings of the 2024 ACM Internet Measurement Conference (IMC '24)},
+  year      = {2024},
+  location  = {Madrid, Spain},
+  pages     = {1--15},
+  publisher = {ACM},
+  doi       = {10.1145/3646547.3688420},
+}
+</code></pre>
+
+</details>
+</p>
+</blockquote>
+<hr />
+<h5 id="diffie-hellman-picture-show-key-exchange-stories-from-commercial-vowifi-deployments"><strong>Diffie-Hellman Picture Show: Key Exchange Stories from Commercial VoWiFi Deployments</strong> <br></h5>
+<p>GK Gegenhuber, <strong>Florian Holzbauer</strong>, PÉ Frenzel, E Weippl, A Dabrowski  <br>
+<em>33rd USENIX Security Symposium (USENIX Security '24), 451-468</em></p>
+<blockquote>
+<p><a href="https://github.com/sbaresearch/vowifi-epdg-scanning/blob/main/usenix-security-24/USENIX_Security_2024_Diffie_Hellman_Picture_Show_Key_Exchange_Stories_from_Commercial_VoWiFi_Deployments_PN.pdf" target="_blank">PAPER</a>; <a href="https://github.com/sbaresearch/vowifi-epdg-scanning/blob/main/usenix-security-24/USENIX_Security_2024_Diffie_Hellman_Picture_Show_Slides.pdf" target="_blank">SLIDES</a>; <a href="https://github.com/sbaresearch/vowifi-epdg-scanning" target="_blank">CODE <i class="fa fa-lg fa-github" aria-hidden="true"></i></a>; <a href="https://github.com/sbaresearch/mbn-mcfg-tools" target="_blank">MBN Parser <i class="fa fa-lg fa-github" aria-hidden="true"></i></a> 
+ 
+<details>
+    <summary>BIBTEX</summary>
+
+<pre><code class="language-bibtex">@inproceedings{gegenhuber2024diffie,
+  title={Diffie-Hellman Picture Show: Key Exchange Stories from Commercial VoWiFi Deployments},
+  author={Gegenhuber, Gabriel K and Holzbauer, Florian and Frenzel, Philipp {\'E} and Weippl, Edgar and Dabrowski, Adrian},
+  booktitle={33rd USENIX Security Symposium (USENIX Security 24)},
+  year={2024}
+}
+</code></pre>
+
+</details></p>
+</blockquote>
+<hr />
+<h5 id="careless-whisper-exploiting-stealthy-end-to-end-leakage-in-mobile-instant-messengers"><strong>Careless Whisper: Exploiting Stealthy End-to-End Leakage in Mobile Instant Messengers</strong> <br></h5>
+<p>GK Gegenhuber, M Günther, M Maier, A Judmayer, <strong>F Holzbauer</strong>, PÉ Frenzel, Johanna Ullrich  <br>
+<em>arXiv preprint arXiv:2411.11194 (2024)</em></p>
+<blockquote>
+<details>
+    <summary>BIBTEX</summary>
+
+<pre><code class="language-bibtex">@article{gegenhuber2024careless,
+  title={Careless Whisper: Exploiting Stealthy End-to-End Leakage in Mobile Instant Messengers},
+  author={Gegenhuber, Gabriel K and Guenther, Maximilian and Maier, Markus and Judmayer, Aljosha and Holzbauer, Florian and Frenzel, Philipp {\'E} and Ullrich, Johanna},
+  journal={arXiv preprint arXiv:2411.11194},
+  year={2024}
+}
+</code></pre>
+
+</details>
+
+</blockquote>
+<hr />
+<h5 id="an-extended-view-on-measuring-tor-as-level-adversaries"><strong>An Extended View on Measuring Tor AS-Level Adversaries</strong>  <br></h5>
+<p>GK Gegenhuber, M Maier, <strong>F Holzbauer</strong>, W Mayer, G Merzdovnik  <br>
+<em>Computers &amp; Security 132, 103302 (2023)</em></p>
+<blockquote>
+<details>
+    <summary>BIBTEX</summary>
+
+<pre><code class="language-bibtex">@article{gegenhuber2023extended,
+  title={An extended view on measuring tor as-level adversaries},
+  author={Gegenhuber, Gabriel K and Maier, Markus and Holzbauer, Florian and Mayer, Wilfried and Merzdovnik, Georg and Weippl, Edgar and Ullrich, Johanna},
+  journal={Computers \&amp; Security},
+  volume={132},
+  pages={103302},
+  year={2023},
+  publisher={Elsevier}
+}
+</code></pre>
+
+</details>
+
+</blockquote>
+<hr />
+<h5 id="not-that-simple-email-delivery-in-the-21st-century"><strong>Not That Simple: Email Delivery in the 21st Century</strong> <br></h5>
+<p><strong>F Holzbauer</strong>, J Ullrich, M Lindorfer, T Fiebig <br>
+<em>USENIX Annual Technical Conference (USENIX ATC '22), 295-308 (2022)</em> </p>
+<blockquote>
+<p><a href="https://www.usenix.org/system/files/atc22-holzbauer.pdf" target="_blank">PAPER</a>; <a href="https://www.usenix.org/sites/default/files/conference/protected-files/atc22_slides_holzbauer.pdf" target="_blank">SLIDES</a>; <a href="https://blog.apnic.net/2023/03/02/not-that-simple-email-delivery-in-the-21st-century/" target="_blank">APNIC-Blog</a>; <a href="https://github.com/ichdasich/email-measurement-toolchain" target="_blank">CODE <i class="fa fa-lg fa-github" aria-hidden="true"></i> </a>
+ 
+<details>
+    <summary>BIBTEX</summary>
+
+<pre><code class="language-bibtex">@inproceedings {holzbauer2022email,
+author = {Florian Holzbauer and Johanna Ullrich and Martina Lindorfer and Tobias Fiebig},
+title = {Not that Simple: Email Delivery in the 21st Century},
+booktitle = {2022 USENIX Annual Technical Conference (USENIX ATC 22)},
+year = {2022},
+isbn = {978-1-939133-29-18},
+address = {Carlsbad, CA},
+pages = {295--308},
+url = {https://www.usenix.org/conference/atc22/presentation/holzbauer},
+publisher = {USENIX Association},
+month = jul
+}
+</code></pre>
+
+</details></p>
+</blockquote>
+<hr />
+<h5 id="ipv6-reconnaissance-internet-weite-analyse-von-icmpv6"><strong>IPv6-Reconnaissance - Internet-weite Analyse von ICMPv6</strong> <br></h5>
+<p><strong>F Holzbauer</strong> <br>
+<em>Master Thesis, University of Applied Sciences St. Pölten (2020)</em></p>
+<h2 id="awards">Awards</h2>
+<p>🏆 Netidee Stipend (10.000€) for my doctoral thesis with the title: <strong>Measuring the Gap between Standardization, Implementation and Adoption of Internet Standards</strong></p>
+<blockquote>
+<p><a href="https://www.netidee.at/measuring-gap-between-standardization-implementation-and-adoption-internet-standards/measuring" target="_blank">BLOG</a>; <a href="https://www.netidee.at/measuring-gap-between-standardization-implementation-and-adoption-internet-standards" target="_blank">STIPEND</a></p>
+</blockquote></p>
     </article>
 </section>
 <!-- endblock -->
@@ -188,7 +322,7 @@
         </div>
         <div class="col themed-grid-col"></div>
         <div class="col themed-grid-col">
-            <a rel="next" href="docs/emailstandards/" class="nav-link">
+            <a rel="next" href="posts/emailstandards/" class="nav-link">
                 Next <i class="fa fa-arrow-right"></i>
             </a>
         </div>
@@ -197,24 +331,6 @@
             
 
             
-                    <!-- block footer -->
-<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
-    <div class="row">
-        <div class="col-12 col-md">
-                <!-- block copyright -->
-
-    <small class="d-block mb-3">
-        Made with
-        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
-            Simple Blog for MkDocs
-        </a>
-    </small>
-
-<!-- endblock -->
-        </div>
-    </div>
-</footer>
-<!-- endblock -->
             
         </div>
 

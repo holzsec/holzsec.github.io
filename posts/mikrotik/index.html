@@ -1,7 +1,7 @@
 <!doctype html>
 <html data-bs-theme="">
     <head>
-                <title>Routerboard Home Setup - holzsec</title>
+                <title>Mikrotik Routerboard Home Setup - holzsec</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +43,7 @@
         
 
         
-            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">holzsec</span>
+            <span class="bold fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">holzsec</span>
         
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
@@ -62,11 +62,11 @@
             <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../..">[holzsec]</a>
+                            nav-link text-gray text-decoration-none" href="../..">[Home]</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" active 
-                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Docs]</a>
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Posts]</a>
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
     <li>
@@ -75,7 +75,7 @@
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Routerboard Home Setup</a>
+        <a href="./" class="dropdown-item text-decoration-none  active ">Mikrotik Routerboard Home Setup</a>
     </li>
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
@@ -134,12 +134,7 @@
     <div class="sidebar navbar-collapse collapse card">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#routerboard-home-setup" class="nav-link">Routerboard Home Setup</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#mikrotik-only-accepts-pem-formatted-keys-you-can-convert-your-key-like-this" class="nav-link">Mikrotik only accepts PEM formatted keys (you can convert your key like this:)</a>
+            <li class="nav-item" data-bs-level="1"><a href="#mikrotik-routerboard-home-setup" class="nav-link">Mikrotik Routerboard Home Setup</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -154,17 +149,16 @@
     <article>
         <header>
             
-                <h1 class=" title" id="component-title">Routerboard Home Setup</h1>
             
         </header>
-        <p><h1 id="routerboard-home-setup">Routerboard Home Setup</h1>
+        <p><h1 id="mikrotik-routerboard-home-setup">Mikrotik Routerboard Home Setup</h1>
 <p>Requires to put your CPE/ADSL modem in bridge mode!
 Public IP from provider is routed to the Mikrotik Routerboard.</p>
 <p>RouterOS Version and Hardware in Use: RB750Gr3
 <a href="https://geizhals.de/mikrotik-routerboard-hex-rb750gr3-a1679274.html">Geizhals</a></p>
-<pre><code>/system/resource/print
+<pre><code class="language-bash">/system/resource/print
 </code></pre>
-<pre><code>                  version: 7.6 (stable)
+<pre><code class="language-bash">                  version: 7.6 (stable)
                build-time: Oct/17/2022 10:55:40
          factory-software: 6.46.3
               free-memory: 203.9MiB
@@ -190,29 +184,29 @@ Public IP from provider is routed to the Mikrotik Routerboard.</p>
 Power off routerboard, press reset button, power on and hold button until light flashes</p>
 <p>2) Router will have DHCP server running on ether1
 Connect with cable and get IP.</p>
-<pre><code>ssh admin@&lt;routerip&gt; 
+<pre><code class="language-bash">ssh admin@&lt;routerip&gt; 
 </code></pre>
 <p>No password is set by default</p>
 <h3 id="choose-options">Choose options</h3>
 <p>1) Miktrotik RouterBoard Wifi =&gt; better disable it, ADSL modem is proably better or buy custom access point </p>
-<pre><code>/interface wireless disable wlan
+<pre><code class="language-bash">/interface wireless disable wlan
 </code></pre>
 <p>2) Disable Default DHCP-Server on WAN Interface (can also be changed to disable)</p>
-<pre><code>/ip dhcp-server remove 0
+<pre><code class="language-bash">/ip dhcp-server remove 0
 </code></pre>
 <p>3) Set Default DHCP Client on WAN interface to not take dns servers from ADSL modem</p>
-<pre><code>/ip dhcp-client set 0 interface=ether1 use-peer-dns=yes use-peer-ntp=no add-default-route=yes disabled=no
+<pre><code class="language-bash">/ip dhcp-client set 0 interface=ether1 use-peer-dns=yes use-peer-ntp=no add-default-route=yes disabled=no
 </code></pre>
 <p>4) Set custom DNS (to f.e. Quad9 + Allow LAN access)</p>
-<pre><code>/ip dns set allow-remote-requests=yes servers=9.9.9.9,149.112.112.112
+<pre><code class="language-bash">/ip dns set allow-remote-requests=yes servers=9.9.9.9,149.112.112.112
 </code></pre>
 <p>(Add IPv6 optional: 2620:fe::fe, 2620:fe::9)</p>
 <h3 id="create-and-setup-bridge">Create and setup bridge</h3>
-<pre><code>/interface bridge
+<pre><code class="language-bash">/interface bridge
 add name=bridge1 protocol-mode=none
 </code></pre>
 <p>Interface Lists for better firewalling</p>
-<pre><code>/interface list
+<pre><code class="language-bash">/interface list
 add name=LANclient
 add name=LANserver
 add name=LANiot
@@ -233,28 +227,28 @@ add interface=ether5 list=WLAN
 </code></pre>
 <h3 id="dhcp-server">DHCP Server</h3>
 <p>Give LAN (DHCP Server) an IP</p>
-<pre><code>/ip address add address=&quot;&lt;IP addr&gt;/24&quot; interface=bridge
+<pre><code class="language-bash">/ip address add address=&quot;&lt;IP addr&gt;/24&quot; interface=bridge
 </code></pre>
 <p>Setup DHCP for LAN bridge</p>
-<pre><code>/ip pool add name=&quot;lan&quot; ranges=&quot;&lt;range&gt;&quot;
+<pre><code class="language-bash">/ip pool add name=&quot;lan&quot; ranges=&quot;&lt;range&gt;&quot;
 /ip dhcp-server network add address=&quot;&lt;addrpool&gt;/24&quot; gateway=&quot;&lt;routeraddr&gt;&quot; netmask=&quot;255.255.255.0&quot; dns-server=&quot;&lt;routeraddr&gt;&quot; domain=&quot;intranet&quot;
 /ip dhcp-server add name=&quot;lan&quot; interface=bridge lease-time=1h address-pool=lan authoritative=yes bootp-support=none
 /ip dhcp-server lease enable 0
 </code></pre>
 <p>Internal DNS names</p>
-<pre><code>/ip dns static add name=&quot;&lt;gw.intranet&gt;&quot; address=&quot;&lt;router addr&gt;&quot; ttl=1h
+<pre><code class="language-bash">/ip dns static add name=&quot;&lt;gw.intranet&gt;&quot; address=&quot;&lt;router addr&gt;&quot; ttl=1h
 </code></pre>
 <p>Static DHCP leases with DNS name</p>
-<pre><code>/ip dns static add name=&quot;&lt;devicename&gt;.intranet&quot; address=&quot;&lt;addr&gt;&quot; ttl=1h
+<pre><code class="language-bash">/ip dns static add name=&quot;&lt;devicename&gt;.intranet&quot; address=&quot;&lt;addr&gt;&quot; ttl=1h
 /ip dhcp-server lease add address=&quot;&lt;addr&gt;&quot; mac-address=&quot;&lt;mac&gt;&quot; comment=&quot;&lt;devicename&gt;.intranet&quot; server=lan
 </code></pre>
 <h3 id="firewalling">Firewalling</h3>
 <p>1) Setup WAN port</p>
-<pre><code>/ip firewall nat
+<pre><code class="language-bash">/ip firewall nat
 add action=masquerade chain=srcnat comment=&quot;Default masq&quot; out-interface=ether1
 </code></pre>
 <p>2) Setup WAN firewall</p>
-<pre><code>/ip firewall filter
+<pre><code class="language-bash">/ip firewall filter
 add action=accept chain=input comment=&quot;Accept established related&quot; connection-state=established,related
 add action=accept chain=input comment=&quot;Allow LAN access to router and Internet&quot; in-interface-list=LAN
 #Optional: add action=accept chain=input comment=&quot;Allow ping ICMP from anywhere&quot; protocol=icmp
@@ -265,19 +259,19 @@ add action=accept chain=forward comment=&quot;Accept Port forwards&quot; connect
 add action=drop chain=forward comment=&quot;Drop all other forward&quot;
 </code></pre>
 <p>3) Optional: Filter outbound connections from internal devices (f.e. IoT devices)</p>
-<pre><code>/ip firewall filter add action=drop chain=output comment=&quot;Block outgoing traffic from IoT-device&quot; src-address=&lt;device-ip&gt;
+<pre><code class="language-bash">/ip firewall filter add action=drop chain=output comment=&quot;Block outgoing traffic from IoT-device&quot; src-address=&lt;device-ip&gt;
 </code></pre>
 <h3 id="port-forwarding">Port Forwarding</h3>
 <p>VPN (Wireguard)</p>
-<pre><code>/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=51820 action=dst-nat protocol=udp to-address=&lt;vpn-ip&gt; to-port=51820
+<pre><code class="language-bash">/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=51820 action=dst-nat protocol=udp to-address=&lt;vpn-ip&gt; to-port=51820
 </code></pre>
 <p>Nginx Reverse Proxy</p>
-<pre><code>/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=443 action=dst-nat protocol=tcp to-address=&lt;serveraddr&gt; to-port=443
+<pre><code class="language-bash">/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=443 action=dst-nat protocol=tcp to-address=&lt;serveraddr&gt; to-port=443
 /ip firewall nat add chain=dstnat in-interface=ether1 dst-port=80 action=dst-nat protocol=tcp to-address=&lt;serveraddr&gt; to-port=80
 </code></pre>
 <h3 id="security">Security</h3>
 <p>Turn off unneeded helpers</p>
-<pre><code>/ip firewall service-port
+<pre><code class="language-bash">/ip firewall service-port
 set ftp disabled=yes
 set tftp disabled=yes
 set irc disabled=yes
@@ -292,7 +286,7 @@ set sctp disabled=yes
 <blockquote>
 <p><b>This also disables the GUI (avoid disabling winbox, www) if needed!</b></p>
 </blockquote>
-<pre><code>/ip service
+<pre><code class="language-bash">/ip service
 set telnet disabled=yes
 set ftp disabled=yes
 set api disabled=yes
@@ -303,43 +297,35 @@ set www disabled=yes
 set www-ssl disabled=yes
 </code></pre>
 <p>Misc IP settings</p>
-<pre><code>/ip ssh
+<pre><code class="language-bash">/ip ssh
 set strong-crypto=yes
 /ip settings
 set rp-filter=no secure-redirects=yes send-redirects=yes tcp-syncookies=no
 </code></pre>
 <p>Remove/disable default ip at last</p>
-<pre><code>/ip address remove 0
+<pre><code class="language-bash">/ip address remove 0
 </code></pre>
-<p>SSH Access with ssh-keys
-```shell script
-ssh-keygen -t rsa -b 4096 -m 'PEM'</p>
-<h1 id="mikrotik-only-accepts-pem-formatted-keys-you-can-convert-your-key-like-this">Mikrotik only  accepts PEM formatted keys (you can convert your key like this:)</h1>
-<p>ssh-keygen -f ~/.ssh/id_rsa.pub -e -m 'PEM' &gt;&gt; ~/.ssh/id_rsa.pub.pem</p>
-<pre><code>
-Copy the pubkey to persistent storage on the routerboard (flash/id_rsa.pub.pem)
-
-On the router:
+<p>SSH Access with ssh-keys</p>
+<pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -m 'PEM'
+#Mikrotik only  accepts PEM formatted keys (you can convert your key like this:)
+ssh-keygen -f ~/.ssh/id_rsa.pub -e -m 'PEM' &gt;&gt; ~/.ssh/id_rsa.pub.pem
 </code></pre>
-<p>user ssh-keys import public-key-file="flash/id_rsa.pub.pem" user=<username></p>
-<pre><code>
-### Graphs
-Per default resource graph for CPU, Memory and Disk usage is collected every 5 minutes. 
-The graph can be accessed under: http://&lt;i&gt;RouterIP&lt;/i&gt;/graphs
+<p>Copy the pubkey to persistent storage on the routerboard (flash/id_rsa.pub.pem)</p>
+<p>On the router:</p>
+<pre><code class="language-bash">user ssh-keys import public-key-file=&quot;flash/id_rsa.pub.pem&quot; user=&lt;username&gt;
 </code></pre>
-<p>/ip service set www disabled=no
-/tool graphing resource add allow-address "192.168.1.0/24"
-/tool graphing resource add disabled=no</p>
-<pre><code>
-&lt;b&gt;Custom data retrieval&lt;/b&gt;
-
-bash script.sh &lt;i&gt;username&lt;/i&gt; &lt;i&gt;router IP&lt;/i&gt;  &lt;br&gt;
-
-Description: Creates a single ssh connection to the router (ssh-keys recommended first), runs multiple commands every 0.5 seconds, outputs it to stdout &lt;br&gt;
-Optional: redirect output to log file `&gt;&gt; router-stats.log`
-
-```shell script
-#
+<h3 id="graphs">Graphs</h3>
+<p>Per default resource graph for CPU, Memory and Disk usage is collected every 5 minutes. 
+The graph can be accessed under: http://<i>RouterIP</i>/graphs</p>
+<pre><code class="language-bash">/ip service set www disabled=no
+/tool graphing resource add allow-address &quot;192.168.1.0/24&quot;
+/tool graphing resource add disabled=no
+</code></pre>
+<p><b>Custom data retrieval</b></p>
+<p>bash script.sh <i>username</i> <i>router IP</i>  <br></p>
+<p>Description: Creates a single ssh connection to the router (ssh-keys recommended first), runs multiple commands every 0.5 seconds, outputs it to stdout <br>
+Optional: redirect output to log file <code>&gt;&gt; router-stats.log</code></p>
+<pre><code class="language-bash">#
 # Persistent SSH Connection accross multiple commands
 #
 user=$1
@@ -411,24 +397,6 @@ ssh -S &quot;$ssh_control_socket&quot; -O exit $host
             
 
             
-                    <!-- block footer -->
-<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
-    <div class="row">
-        <div class="col-12 col-md">
-                <!-- block copyright -->
-
-    <small class="d-block mb-3">
-        Made with
-        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
-            Simple Blog for MkDocs
-        </a>
-    </small>
-
-<!-- endblock -->
-        </div>
-    </div>
-</footer>
-<!-- endblock -->
             
         </div>
 
