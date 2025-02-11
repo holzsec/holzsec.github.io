@@ -1,7 +1,7 @@
 <!doctype html>
 <html data-bs-theme="">
     <head>
-                <title>Unraid - holzsec</title>
+                <title>🇦🇹 Statistics on the Internet - holzsec</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,7 +77,7 @@
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="../charts/" class="dropdown-item text-decoration-none ">🇦🇹 Statistics on the Internet</a>
+        <a href="./" class="dropdown-item text-decoration-none  active ">🇦🇹 Statistics on the Internet</a>
     </li>
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
@@ -92,7 +92,7 @@
 <!-- endblock -->
                                     <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Unraid</a>
+        <a href="../storage/" class="dropdown-item text-decoration-none ">Unraid</a>
     </li>
 <!-- endblock -->
                             </ul>
@@ -144,99 +144,72 @@
             
             
         </header>
-        <p><h1 id="unraid">Unraid</h1>
-<h2 id="parity">Parity</h2>
-<p>Unraid relies on 'even parity' for disk failure protection. Unraid stores the parity bits on a dedicated parity disk.   </p>
-<p>The advantage of it: Unraid needs only one parity disk, independent of how many disks you have in your storage array. The only requirement is that the parity disk is equal or larger in size than the largest disk in the array.   </p>
-<p>The disadvantage: Only one disk is allowed to fail (in default mode).   </p>
-<blockquote>
-<p>How does this work?  </p>
-</blockquote>
-<p>Parity is calculated as even parity:<br />
-SUM of disk bits must be even.  </p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Disk1</th>
-<th>Disk2</th>
-<th>Disk3</th>
-<th>Disk4</th>
-<th>Parity</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bit 0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Bit 1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>In case Disk 1 fails:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Disk1</th>
-<th>Disk2</th>
-<th>Disk3</th>
-<th>Disk4</th>
-<th>Parity</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bit 0</td>
-<td>x1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Bit 1</td>
-<td>x2</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>Reconstructing Disk1:<br />
-x1:  x + 0 + 1 + 1 + 1 = even, x1 must be 1<br />
-x2:  x + 0 + 1 + 1 + 0 = even, x2 must be 0</p>
-<p>Unraid also allows dual parity - two parity disks - that protects against any two disk failures. </p>
-<details>
-<summary>Change parity disk?</summary>
-<br>
-1. Stop the array
-2. Unassign the old parity disk
-3. Assign the new parity disk
-4. Start the array!
-</details>
+        <p><h1 id="statistics-on-the-internet">🇦🇹 Statistics on the Internet</h1>
+<h2 id="allocated-vs-routed-internet">Allocated vs Routed Internet</h2>
+<p>Dataset: <a href="/assets/datasets/at_allocated_routed.csv">at_allocated_routed.csv</a> </p>
+<p><vegachart style='width: 100%'  class="vegalite">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "IPv4 Allocated+Assigned vs Routed IPs Over Time with Nearest Tooltip",
+  "width": "container",
+  "height": 250,
+  "data": {
+    "url": "/assets/datasets/at_allocated_routed.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "line"},
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "title": "Year",
+          "axis": {"titleFontSize": 24, "labelFontSize": 16, "format": "%Y"}
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": "IP Addresses",
+          "axis": {"titleFontSize": 20, "labelFontSize": 16}
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "title": "Category",
+          "legend": {"titleFontSize": 20, "labelFontSize":16}
+        }
+      }
+    },
+    {
+      "transform": [{"pivot": "Category", "value": "Value", "groupby": ["Date"]}],
+      "mark": "rule",
+      "encoding": {
+        "x": {"field": "Date", "type": "temporal"},
+        "opacity": {
+          "condition": {"value": 0.3, "param": "hover", "empty": false},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Date", "type": "temporal", "title": "Date"},
+          {"field": "allocated_assigned", "type": "quantitative", "title": "Allocated+Assigned"},
+          {"field": "routed", "type": "quantitative", "title": "Routed"}
+        ]
+      },
+      "params": [{
+        "name": "hover",
+        "select": {
+          "type": "point",
+          "fields": ["Date"],
+          "nearest": true,
+          "on": "pointerover",
+          "clear": "pointerout"
+        }
+      }]
+    }
+  ]
+}
 
-<h2 id="transfer-data-from-external-drives-to-unraid">Transfer data from external drives to Unraid</h2>
-<p>Goal: Data in one central deduplicated place, protected from disk failures.  </p>
-<p>To mount external drives without assigning them to the array the <em>Unassigned Devices</em> App is necessary.  </p>
-<p>With this App we also install <em>Unassigned Devices Preclear</em> to have <em>tmux</em> available on the Unraid server.  </p>
-<p>Once <em>Unassigned Devices</em> is installed the USB-connected external drive will show up in the <em>Main</em> tab. By mounting it, it will be available under <em>mnt/disks/<Drivename></em>. We can simply open a terminal in that location and preprocess folders before transferring them to the array. For example folders with large amounts of subfolders can be reduced to a single archive with tar, xz or zip.   </p>
-<pre class="highlight"><code>tar cf archive.tar folder 
-(optional to also compress - T0 for multithreading: tar -c -I 'xz -T0' -f archive.tar.xz)
-zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip folder1 folder2 file3</code></pre>
-<p>Once the data from the external drive is preprocessed, files can be transferred with the <em>Midnight Commander</em> by executing <code>mc</code> in the terminal.</p></p>
+</vegachart></p></p>
     </article>
 </section>
 <!-- endblock -->
@@ -248,13 +221,13 @@ zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip
                     <!-- block preview -->
     <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
         <div class="col themed-grid-col">
-            <a rel="prev" href="../mikrotik/" class="nav-link">
+            <a rel="prev" href="../.." class="nav-link">
                 <i class="fa fa-arrow-left"></i> Previous
             </a>
         </div>
         <div class="col themed-grid-col"></div>
         <div class="col themed-grid-col">
-            <a rel="next" class="nav-link disabled">
+            <a rel="next" href="../emailstandards/" class="nav-link">
                 Next <i class="fa fa-arrow-right"></i>
             </a>
         </div>
@@ -277,6 +250,10 @@ zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip
                 <script src="../../assets/js/vega-render.js" defer></script>
                 <script src="../../search/main.js" defer></script>
 
-    </body>
+    
+        <script>
+        var mkdocs_chart_plugin = {'data_path': '', 'use_data_path': 'True', 'vega_theme': 'deprecated', 'vega_theme_light': 'default', 'vega_theme_dark': 'dark', 'vega_renderer': 'svg', 'vega_width': 'container', 'fallback_width': '800', 'integrations': {'mkdocs_material': {'themes_light': ['default'], 'themes_dark': ['slate']}}, 'path_to_homepage': '../..'}
+        </script>
+        </body>
 
 </html>
