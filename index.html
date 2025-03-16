@@ -32,11 +32,6 @@
 
             
                 
-                    
-                    
-                    
-                     <style>:root {--background: var(--color-white);}</style> 
-                
             
     </head>
 
@@ -146,17 +141,41 @@
             
         </header>
         <p><p align="center">
-<img src="../assets/img/profile.jpg" style="max-height:30rem; max-width: 70%; margin: auto;" />
+<img src="../assets/img/profile.jpg" style="max-height:30rem; min-width: 30%; max-width: 75%; margin: auto;" />
 </p>
 
 <h2 id="about">About</h2>
 <p>Hi everyone 👋 - I am Florian and I am a last year PhD student at the University of Vienna's Security &amp; Privacy Research Group (<a href="https://sec.cs.univie.ac.at/" target="_blank">SEC</a>) and the Network &amp; Critical Infrastructure Security Group (<a href="https://www.sba-research.org/research/research-groups/eris/" target="_blank">ERIS</a>) at SBA-Research.</p>
 <p>During my master studies I joined Team ERIS as a junior researcher. With my supervisor <a href="https://johannaullrich.eu" target="_blank">Johanna</a>, we found an entry point for Internet-measurements in Austria (<a href="https://aim.sba-research.org" target="_blank">aim.sba-research.org</a>). I am now pursuing a PhD in that field with the focus on measuring Internet standard adoption and compliance.</p>
 <p>My research focuses on tracking protocol adoption and security, the transition to IPv6, and leveraging active measurements to detect Internet outages.</p>
-<p>To make my measurements accessible to everyone, I try to build open measurement platforms. My first one, <a href="https://www.email-security-scans.org" target="_blank">email-security-scans.org</a>, is designed to rank email servers and providers for improved transparency and security. </p>
+<h2 id="measurement-platforms">Measurement Platforms</h2>
+<p>To make my measurements accessible to everyone, I try to build open measurement platforms. </p>
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+
+  <!-- Email Security Scans Card -->
+  <a href="https://www.email-security-scans.org" target="_blank" style="text-decoration: none; color: inherit;">
+    <div style="flex: 1; min-width: 300px; max-width: 400px; padding: 15px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); border: 1px solid #ddd; text-align: center; transition: transform 0.2s ease-in-out;">
+      <img src="assets/img/emailsecurityscans.png" alt="Email Security" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+      <h5>📧 Email Security</h5>
+      <p style="font-size: 14px; color: #555;">Ranks email servers.</p>
+    </div>
+  </a>
+
+  <!-- IP Tracking Card -->
+  <a href="https://ip.holzsec.at" target="_blank" style="text-decoration: none; color: inherit;">
+    <div style="flex: 1; min-width: 300px; max-width: 400px; padding: 15px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); border: 1px solid #ddd; text-align: center; transition: transform 0.2s ease-in-out;">
+      <img src="assets/img/ipendpoint.png" alt="IP Endpoint" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;">
+      <h5>📍 IP Endpoint</h5>
+      <p style="font-size: 14px; color: #555;">Tracks public IPs.</p>
+    </div>
+  </a>
+
+</div>
+
 <h2 id="talks">Talks</h2>
 <ul>
-<li>🇦🇹 2025, Feb 25th, Security Meetup, <em>From Ping to Blackout: Active Measurements on Internet Disruptions in Ukraine Kherson</em> (Dynatrace, Vienna, AT).</li>
+<li>🇦🇹 (Upcoming) 2025, Jun 25/26th, <a href="https://seminar.bundesheer.at/" target="_blank">IKT</a>, <em>TBA</em> (Dornbirn, AT).</li>
+<li>🇦🇹 2025, Feb 25th, <a href="https://www.meetup.com/security-meetup-by-sba-research/events/305866708/" target="_blank">Security Meetup</a>, <em>From Ping to Blackout: Active Measurements on Internet Disruptions in Ukraine Kherson</em> (Dynatrace, Vienna, AT).</li>
 <li>🇦🇹 2025, Feb 24th, <a href="https://atnog.at/?tribe_events=atnog-2025-1" target="_blank">ATNOG 25/1</a>, <em>Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen</em> (Linz AG, Linz, AT).</li>
 <li>🇦🇹 2024, Sept 18th, <a href="https://seminar.bundesheer.at/pdfs/Prog2024/ProgKonferenz2024.pdf" target="_blank">IKT</a>, <em>Analyse rerouting Internet in Kherson</em> (Vienna, AT).</li>
 <li>🇪🇸 2024, Nov 05th, <a href="https://conferences.sigcomm.org/imc/2024/program" target="_blank">IMC</a>, <em>Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources</em> (Madrid, ES).</li>
