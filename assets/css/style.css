@@ -1,5 +1,5 @@
 body { 
-  --background: #ffffff;
+  --background: #fffff5;
   background: var(--background) !important;
 }
 
@@ -10,3 +10,25 @@ body {
 #navbarsMenu {
     margin-right: 10% !important;
 }
+
+/* Target the Vega tooltip with custom theme */
+.vega-tooltip.custom-theme {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 8px 12px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  color: #333;
+  border-radius: 6px;
+}
+
+.vega-tooltip.custom-theme table {
+  border-collapse: collapse;
+}
+
+.vega-tooltip.custom-theme td {
+  padding: 4px 6px;
+  border: none;
+}
+
