@@ -31,23 +31,133 @@ body {
   padding: 4px 6px;
   border: none;
 }
-
-
-.talk-grid {
+.talks-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* Main card */
+.talk-card {
+  position: relative;
+  height: 220px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg) center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-weight: 600;
+  transition: transform .25s ease;
+}
+
+/* subtle overlay over background image */
+.talk-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(3px);
+}
+
+/* short text */
+.talk-short {
+  position: relative;
+  z-index: 2;
+  font-size: 1.6rem;
+}
+
+/* hover layer */
+.talk-hover {
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  padding: 18px;
+  overflow-y: auto;
+  transition: opacity .3s ease;
+  z-index: 3;
+}
+
+.talk-card:hover .talk-hover {
+  opacity: 1;
+}
+
+/* image grid inside hover view */
+.talk-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
   margin-top: 15px;
 }
 
-.talk-card img {
+.talk-images img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-radius: 8px;
 }
 
-.talk-card p {
-  text-align: center;
-  margin-top: 8px;
+/* hover animation */
+.talk-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
+
+
+/* ======================= */
+/*      MODAL (BOOTSTRAP STYLE) */
+/* ======================= */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* actual modal window */
+.modal-content {
+  background: #fff;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 90%;
+  padding: 25px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: fadeIn .25s ease;
+}
+
+/* close button */
+.modal-close {
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  margin-top: -8px;
+}
+
+/* modal images grid */
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-images img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}

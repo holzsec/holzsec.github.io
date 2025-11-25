@@ -28,6 +28,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
                 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
                 <script src="assets/js/vega-render.js"></script>
+                <script src="assets/js/modal.js"></script>
                 <script src="search/main.js"></script>
 
             
@@ -187,27 +188,170 @@
 </div>
 
 <h2 id="talks">Talks</h2>
-<ul>
-<li>🇺🇸 2025, Oct 28th, <a href="https://conferences.sigcomm.org/imc/2025/" target="_blank">IMC</a>, <em>Tracking Internet Disruptions in Ukraine: Insights from Three Years of Active Full Block Scans</em> (Madison, WI, USA).</li>
+<details>
+  <summary>LIST</summary>
+  <ul>
+ <li>🇺🇸 2025, Oct 28th, <a href="https://conferences.sigcomm.org/imc/2025/" target="_blank">IMC</a>, *Tracking Internet Disruptions in Ukraine: Insights from Three Years of Active Full Block Scans* (Madison, WI, USA).</li>
+<li> 🇩🇪 2025, Sept 17/18th, <a href="https://mobilesec.org/msc25/" target="_blank">ISMK</a>, *From Ping to Blackout: Tracking Internet Disruptions in Ukraine Since 2022* (Stralsund, DE).</li>
+<li> 🇦🇹 2025, Jun 25/26th, <a href="https://seminar.bundesheer.at/" target="_blank">IKT</a>, *Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen* (Dornbirn, AT).</li>
+<li> 🇦🇹 2025, Feb 25th, <a href="https://www.meetup.com/security-meetup-by-sba-research/events/305866708/" target="_blank">Security Meetup</a>, *From Ping to Blackout: Active Measurements on Internet Disruptions in Ukraine Kherson* (Dynatrace, Vienna, AT).</li>
+<li> 🇦🇹 2025, Feb 24th, <a href="https://atnog.at/?tribe_events=atnog-2025-1" target="_blank">ATNOG 25/1</a>, *Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen* (Linz AG, Linz, AT).</li>
+<li> 🇦🇹 2024, Sept 18th, <a href="https://seminar.bundesheer.at/pdfs/Prog2024/ProgKonferenz2024.pdf" target="_blank">IKT</a>, *Analyse rerouting Internet in Kherson* (Vienna, AT).</li>
+<li> 🇪🇸 2024, Nov 05th, <a href="https://conferences.sigcomm.org/imc/2024/program" target="_blank">IMC</a>, *Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources* (Madrid, ES).</li>
+<li> 🇺🇸 2022, July, <a href="https://www.usenix.org/conference/atc22/presentation/holzbauer"  target="_blank">USENIX ATC</a>, *Not That Simple: Email Delivery in the 21st Century* (Carlsbad, US).</li>
 </ul>
-<div class="talk-grid">
-  <div class="talk-card">
-    <img src="assets/img/talks/2025_imc_01.jpeg" alt="IMC 2025">
-  </div>
+</details>
 
-  <div class="talk-card">
-    <img src="assets/img/talks/2025_imc_02.jpg" alt="ISMK 2025">
+<div class="talks-container">
+<!-- IMC 2025 -->
+<div class="talk-card"
+     onclick="openModal('modal-imc25')"
+     style="--bg:url('/assets/img/talks/2025_imc_01.jpeg')">
+
+  <div class="talk-short">IMC ’25 🇺🇸</div>
+
+  <!-- this hover content WILL NOT show anymore, because clicking opens the modal -->
+  <div class="talk-hover">
+    <p><strong>2025, Oct 28th, IMC</strong><br>
+    <em>Tracking Internet Disruptions in Ukraine: Insights from Three Years of Active Full Block Scans</em><br>
+    Madison, WI, USA.</p>
+
+    <div class="talk-images">
+      <img src="assets/img/talks/2025_imc_01.jpeg">
+      <img src="assets/img/talks/2025_imc_02.jpg">
+    </div>
   </div>
 </div>
-<ul>
-<li>🇩🇪 2025, Sept 17/18th, <a href="https://mobilesec.org/msc25/" target="_blank">ISMK</a>, <em>From Ping to Blackout: Tracking Internet Disruptions in Ukraine Since 2022</em> (Stralsund, DE).</li>
-<li>🇦🇹 2025, Jun 25/26th, <a href="https://seminar.bundesheer.at/" target="_blank">IKT</a>, <em>Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen</em> (Dornbirn, AT).</li>
-<li>🇦🇹 2025, Feb 25th, <a href="https://www.meetup.com/security-meetup-by-sba-research/events/305866708/" target="_blank">Security Meetup</a>, <em>From Ping to Blackout: Active Measurements on Internet Disruptions in Ukraine Kherson</em> (Dynatrace, Vienna, AT).</li>
-<li>🇦🇹 2025, Feb 24th, <a href="https://atnog.at/?tribe_events=atnog-2025-1" target="_blank">ATNOG 25/1</a>, <em>Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen</em> (Linz AG, Linz, AT).</li>
-<li>🇦🇹 2024, Sept 18th, <a href="https://seminar.bundesheer.at/pdfs/Prog2024/ProgKonferenz2024.pdf" target="_blank">IKT</a>, <em>Analyse rerouting Internet in Kherson</em> (Vienna, AT).</li>
-<li>🇪🇸 2024, Nov 05th, <a href="https://conferences.sigcomm.org/imc/2024/program" target="_blank">IMC</a>, <em>Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources</em> (Madrid, ES).</li>
-<li>🇺🇸 2022, July, <a href="https://www.usenix.org/conference/atc22/presentation/holzbauer"  target="_blank">USENIX ATC</a>, <em>Not That Simple: Email Delivery in the 21st Century</em> (Carlsbad, US).</li>
-</ul>
+
+<!-- IMC 2025 MODAL -->
+<div id="modal-imc25" class="modal-overlay" onclick="closeModal(event, 'modal-imc25')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+
+    <span class="modal-close" onclick="closeModal(event, 'modal-imc25')">&times;</span>
+
+    <h2>IMC ’25 — Madison, Wisconsin 🇺🇸</h2>
+
+    <p><strong>2025, Oct 28th</strong><br>
+    <em>Tracking Internet Disruptions in Ukraine: Insights from Three Years of Active Full Block Scans</em></p>
+
+    <p>
+      Event website:  
+      <a href="https://conferences.sigcomm.org/imc/2025/" target="_blank">
+        https://conferences.sigcomm.org/imc/2025/
+      </a>
+    </p>
+
+    <div class="modal-images">
+      <img src="assets/img/talks/2025_imc_01.jpeg" alt="IMC 2025">
+      <img src="assets/img/talks/2025_imc_02.jpg" alt="IMC 2025">
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- ISMK 2025 -->
+  <div class="talk-card" style="--bg:url('assets/img/talks/2025_ismk_01.jpg')">
+    <div class="talk-short">ISMK ’25 🇩🇪</div>
+    <div class="talk-hover">
+      <p><strong>2025, Sept 17/18th, ISMK</strong><br>
+      <em>From Ping to Blackout: Tracking Internet Disruptions in Ukraine Since 2022</em><br>
+      Stralsund, DE.</p>
+
+      <div class="talk-images">
+        <img src="assets/img/talks/2025_ismk_01.jpg" alt="ISMK 2025">
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- IKT 2025 (Dornbirn) -->
+  <div class="talk-card" style="--bg:url('assets/img/talks/2025_ikt_01.jpg')">
+    <div class="talk-short">IKT ’25 🇦🇹</div>
+    <div class="talk-hover">
+      <p><strong>2025, Jun 25/26th, IKT</strong><br>
+      <em>Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen</em><br>
+      Dornbirn, AT.</p>
+
+      <div class="talk-images">
+        <img src="assets/img/talks/2025_ikt_01.jpg">
+        <img src="assets/img/talks/2025_ikt_02.jpg">
+      </div>
+    </div>
+  </div>
+
+  <!-- Security Meetup 2025 -->
+  <div class="talk-card" style="--bg:url('assets/img/talks/2025_meetup_01.jpg')">
+    <div class="talk-short">Meetup ’25 🇦🇹</div>
+    <div class="talk-hover">
+      <p><strong>2025, Feb 25th, Security Meetup</strong><br>
+      <em>From Ping to Blackout: Active Measurements on Internet Disruptions in Ukraine Kherson</em><br>
+      Dynatrace, Vienna, AT.</p>
+
+      <div class="talk-images">
+        <img src="assets/img/talks/2025_meetup_01.jpg">
+      </div>
+    </div>
+  </div>
+
+  <!-- ATNOG 25/1 -->
+  <div class="talk-card" style="--bg:url('assets/img/talks/2025_atnog_01.jpg')">
+    <div class="talk-short">ATNOG ’25 🇦🇹</div>
+    <div class="talk-hover">
+      <p><strong>2025, Feb 24th, ATNOG 25/1</strong><br>
+      <em>Von Österreich zur Ukraine und zurück: Aktive Messungen zum Erkennen von Internetausfällen</em><br>
+      Linz AG, Linz, AT.</p>
+
+      <div class="talk-images">
+        <img src="assets/img/talks/2025_atnog_01.jpg">
+      </div>
+    </div>
+  </div>
+
+  <!-- IKT 2024 -->
+  <div class="talk-card" style="--bg:url('/assets/img/talks/2024_ikt_01.jpg')">
+    <div class="talk-short">IKT ’24 🇦🇹</div>
+    <div class="talk-hover">
+      <p><strong>2024, Sept 18th, IKT</strong><br>
+      <em>Analyse rerouting Internet in Kherson</em><br>
+      Vienna, AT.</p>
+
+
+    </div>
+  </div>
+
+  <!-- IMC 2024 (Madrid) -->
+  <div class="talk-card" style="--bg:url('/assets/img/talks/2024_imc_01.jpg')">
+    <div class="talk-short">IMC ’24 🇪🇸</div>
+    <div class="talk-hover">
+      <p><strong>2024, Nov 05th, IMC</strong><br>
+      <em>Destination Reachable: What ICMPv6 Error Messages Reveal About Their Sources</em><br>
+      Madrid, ES.</p>
+
+      <div class="talk-images">
+        <img src="assets/img/talks/2024_imc_01.jpg">
+        <img src="assets/img/talks/2024_imc_02.jpg">
+      </div>
+    </div>
+  </div>
+
+  <!-- USENIX ATC 2022 -->
+  <div class="talk-card" style="--bg:url('assets/img/talks/2022_atc_01.jpg')">
+    <div class="talk-short">ATC ’22 🇺🇸</div>
+    <div class="talk-hover">
+      <p><strong>2022, July, USENIX ATC</strong><br>
+      <em>Not That Simple: Email Delivery in the 21st Century</em><br>
+      Carlsbad, US.</p>
+
+      <div class="talk-images">
+        <img src="assets/img/talks/2022_atc_01.jpg">
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <h2 id="publications">Publications</h2>
 <hr />
 <h5 id="tracking-internet-disruptions-in-ukraine-insights-from-three-years-of-active-full-block-scans"><strong>Tracking Internet Disruptions in Ukraine: Insights from Three Years of Active Full Block Scans</strong> <br></h5>
@@ -383,6 +527,7 @@ month = jul
                 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
                 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
                 <script src="assets/js/vega-render.js" defer></script>
+                <script src="assets/js/modal.js" defer></script>
                 <script src="search/main.js" defer></script>
 
     </body>
