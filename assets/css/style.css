@@ -1,5 +1,5 @@
 body { 
-  --background: #fffff5;
+  --background: #fafafa; /*#fafafa; /*#fffff5;*/
   background: var(--background) !important;
 }
 
