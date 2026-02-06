@@ -1,15 +1,33 @@
-body { 
-  --background: #fafafa; /*#fafafa; /*#fffff5;*/
+/* =========================================================
+   Global / Theme tweaks
+   ========================================================= */
+
+:root {
+  --background: #fafafa; /* #fafafa;  #fffff5; */
+}
+
+body {
   background: var(--background) !important;
 }
 
+/* =========================================================
+   Base typography
+   ========================================================= */
+
+
+
+/* if your theme uses .navbar */
 .navbar {
-  background: --background;
+  background: var(--background);
 }
 
 #navbarsMenu {
-    margin-right: 10% !important;
+  margin-right: 10% !important;
 }
+
+/* =========================================================
+   Vega tooltip theme
+   ========================================================= */
 
 /* Target the Vega tooltip with custom theme */
 .vega-tooltip.custom-theme {
@@ -31,6 +49,116 @@ body {
   padding: 4px 6px;
   border: none;
 }
+
+
+/* =========================================================
+   About section (text left, image right)
+   ========================================================= */
+
+.about-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin: 30px 0 40px 0;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-text h2 {
+  margin-top: 0;
+}
+
+.about-image {
+  flex: 0 0 280px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* =========================================================
+   Social links (Font Awesome)
+   ========================================================= */
+
+.social-links {
+  margin-top: 14px;
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  font-size: 1.6rem;
+  color: #333;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   Platform cards (Measurement Platforms)
+   ========================================================= */
+
+.platform-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.platform-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.10);
+  border: 1px solid #ddd;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background: #fff;
+}
+
+.platform-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 10px 18px rgba(0,0,0,0.12);
+}
+
+.platform-card img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.platform-card h5 {
+  margin: 8px 0 6px 0;
+}
+
+.platform-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* =========================================================
+   Talks grid + cards (from your index.html)
+   ========================================================= */
+
 .talks-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -105,11 +233,9 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-
-
-/* ======================= */
-/*      MODAL (BOOTSTRAP STYLE) */
-/* ======================= */
+/* =========================================================
+   MODAL (your bootstrap-style modal)
+   ========================================================= */
 
 .modal-overlay {
   display: none;
@@ -120,6 +246,11 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+
+/* IMPORTANT: allow modal.js to toggle visibility */
+.modal-overlay.open {
+  display: flex;
 }
 
 /* actual modal window */
@@ -142,6 +273,9 @@ body {
   cursor: pointer;
   float: right;
   margin-top: -8px;
+  border: none;
+  background: transparent;
+  line-height: 1;
 }
 
 /* modal images grid */
@@ -161,3 +295,9 @@ body {
   from { transform: translateY(20px); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
 }
+
+/* Optional: prevent scroll when modal open (if your JS adds this class) */
+body.modal-open {
+  overflow: hidden;
+}
+

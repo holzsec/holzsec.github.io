@@ -17,11 +17,19 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
                 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/grayscale-dark.min.css">
                 <script>hljs.highlightAll();</script>
+
+        <script>var base_url = '../..';</script>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
             <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="../../assets/css/root.min.css">
             <link rel="stylesheet" href="../../assets/css/main.min.css">
+            <link rel="stylesheet" href="../../assets/css/media.min.css">
+            <link rel="stylesheet" href="../../assets/css/mkdocstrings.min.css">
+                <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+                <link href="../../assets/css/main.min.css" rel="stylesheet">
+                <link href="../../assets/css/root.min.css" rel="stylesheet">
                 <link href="../../assets/css/style.css" rel="stylesheet">
                 <script src="../../js/mkdocs-charts-plugin.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -29,11 +37,13 @@
                 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
                 <script src="../../assets/js/vega-render.js"></script>
                 <script src="../../assets/js/modal.js"></script>
+                <script src="../../assets/js/bootstrap.bundle.min.js"></script>
                 <script src="../../search/main.js"></script>
 
             
                 
             
+          
     </head>
 
     <body>
@@ -66,7 +76,7 @@
             <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="
-                            nav-link text-gray text-decoration-none" href="../..">[Home]</a>
+                            nav-link text-gray text-decoration-none" href="../..">[holzsec]</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" active 
@@ -235,9 +245,10 @@ x2:  x + 0 + 1 + 1 + 0 = even, x2 must be 0</p>
 <p>To mount external drives without assigning them to the array the <em>Unassigned Devices</em> App is necessary.  </p>
 <p>With this App we also install <em>Unassigned Devices Preclear</em> to have <em>tmux</em> available on the Unraid server.  </p>
 <p>Once <em>Unassigned Devices</em> is installed the USB-connected external drive will show up in the <em>Main</em> tab. By mounting it, it will be available under <em>mnt/disks/<Drivename></em>. We can simply open a terminal in that location and preprocess folders before transferring them to the array. For example folders with large amounts of subfolders can be reduced to a single archive with tar, xz or zip.   </p>
-<pre class="highlight"><code>tar cf archive.tar folder 
-(optional to also compress - T0 for multithreading: tar -c -I 'xz -T0' -f archive.tar.xz)
-zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip folder1 folder2 file3</code></pre>
+<div class="highlight"><pre><span></span><code>tar cf archive.tar folder 
+(optional to also compress - T0 for multithreading: tar -c -I &#39;xz -T0&#39; -f archive.tar.xz)
+zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip folder1 folder2 file3
+</code></pre></div>
 <p>Once the data from the external drive is preprocessed, files can be transferred with the <em>Midnight Commander</em> by executing <code>mc</code> in the terminal.</p></p>
     </article>
 </section>
@@ -268,7 +279,6 @@ zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip
             
         </div>
 
-            <script>var base_url = '../..';</script>
             <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
             <script src="../../assets/js/bootstrap.bundle.min.js""></script>
             <script src="../../assets/js/main.min.js""></script>
@@ -278,6 +288,7 @@ zip (-e for password protected archives) -r (recursive) &lt;archive_name&gt;.zip
                 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
                 <script src="../../assets/js/vega-render.js" defer></script>
                 <script src="../../assets/js/modal.js" defer></script>
+                <script src="../../assets/js/bootstrap.bundle.min.js" defer></script>
                 <script src="../../search/main.js" defer></script>
 
     </body>
