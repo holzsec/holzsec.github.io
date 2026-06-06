@@ -105,6 +105,100 @@ body {
   transform: translateY(-2px);
 }
 
+.packet-separator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 700px;
+  margin: 48px auto 16px;
+  font-family: system-ui, sans-serif;
+}
+
+.endpoint {
+  width: 54px;
+  height: 54px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  background: #fff;
+}
+
+.cable {
+  position: relative;
+  flex: 1;
+  height: 8px;
+  background: #000;
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.packet {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.packet-result {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 14px 16px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  background: #fff;
+}
+
+.packet-result dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+  margin: 0;
+}
+
+.packet-result dt {
+  font-weight: 700;
+}
+
+.packet-result dd {
+  margin: 0;
+}
+.packet-button {
+  width: 84px;
+  height: 54px;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font: 700 14px system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.packet-button:hover {
+  background: #f2f2f2;
+}
+
+.packet-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.packet-result:empty {
+  display: none;
+}
 
 /* =========================================================
    Platform cards (Measurement Platforms)
