@@ -1,56 +1,59 @@
 <!doctype html>
 <html data-bs-theme="">
-    <head>
-                <title>🛜 Mikrotik Routerboard Home Setup - holzsec - Florian Holzbauer</title>
 
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>🛜 Mikrotik Routerboard Home Setup - holzsec - Florian Holzbauer
+    </title>
 
-            
-            
-            
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            
-                <link  rel="icon" type="image/x-icon" href="../../assets/img/holzsec.webp">
-            
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-                <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/grayscale-dark.min.css">
-                <script>hljs.highlightAll();</script>
+    
+    
+    
 
-        <script>var base_url = '../..';</script>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/img/holzsec.webp">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/grayscale-dark.min.css">
+    <script>hljs.highlightAll();</script>
+    
 
-            <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="../../assets/css/root.min.css">
-            <link rel="stylesheet" href="../../assets/css/main.min.css">
-            <link rel="stylesheet" href="../../assets/css/media.min.css">
-            <link rel="stylesheet" href="../../assets/css/mkdocstrings.min.css">
-                <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-                <link href="../../assets/css/main.min.css" rel="stylesheet">
-                <link href="../../assets/css/root.min.css" rel="stylesheet">
-                <link href="../../assets/css/style.css" rel="stylesheet">
-                <script src="../../js/mkdocs-charts-plugin.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-                <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-                <script src="../../assets/js/vega-render.js"></script>
-                <script src="../../assets/js/modal.js"></script>
-                <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-                <script src="../../assets/js/packet-anim.js"></script>
-                <script src="../../search/main.js"></script>
+    <script>var base_url = '../..';</script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            
-                
-            
-          
-    </head>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/root.min.css">
+    <link rel="stylesheet" href="../../assets/css/main.min.css">
+    <link rel="stylesheet" href="../../assets/css/media.min.css">
+    <link rel="stylesheet" href="../../assets/css/mkdocstrings.min.css">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/main.min.css" rel="stylesheet">
+    <link href="../../assets/css/root.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script src="../../js/mkdocs-charts-plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="../../assets/js/vega-render.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/packet-anim.js"></script>
+    <script src="../../search/main.js"></script>
 
-    <body>
-        <div class="container py-3">
-            <header>
-                    <!-- block header -->
+    
+    
+    
+    
+</head>
+
+<body>
+    <div class="container py-3">
+        <header>
+            <!-- block header -->
 <nav class="navbar navbar-expand-xl border-bottom">
     <div class="container-fluid">
         
@@ -136,9 +139,9 @@
     </div>
 </nav>
 <!--  endblock -->
-            </header>
+        </header>
 
-            <main><!-- block search -->
+        <main><!-- block search -->
 <div class="collapse" id="collapseExample">
     <div role="search" class="search-box">
         <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -149,8 +152,8 @@
 </div>
 <!-- endblock -->
 
-                
-                        <!-- block content -->
+            
+            <!-- block content -->
 <section class="container post" id="component-content">
     <article>
         <header>
@@ -162,26 +165,25 @@
 Public IP from provider is routed to the Mikrotik Routerboard.</p>
 <p>RouterOS Version and Hardware in Use: RB750Gr3
 <a href="https://geizhals.de/mikrotik-routerboard-hex-rb750gr3-a1679274.html">Geizhals</a>
-<div class="highlight"><pre><span></span><code>/system/resource/print
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="w">                  </span>version:<span class="w"> </span><span class="m">7</span>.6<span class="w"> </span><span class="o">(</span>stable<span class="o">)</span>
-<span class="w">               </span>build-time:<span class="w"> </span>Oct/17/2022<span class="w"> </span><span class="m">10</span>:55:40
-<span class="w">         </span>factory-software:<span class="w"> </span><span class="m">6</span>.46.3
-<span class="w">              </span>free-memory:<span class="w"> </span><span class="m">203</span>.9MiB
-<span class="w">             </span>total-memory:<span class="w"> </span><span class="m">256</span>.0MiB
-<span class="w">                      </span>cpu:<span class="w"> </span>MIPS<span class="w"> </span>1004Kc<span class="w"> </span>V2.15
-<span class="w">                </span>cpu-count:<span class="w"> </span><span class="m">4</span>
-<span class="w">            </span>cpu-frequency:<span class="w"> </span>880MHz
-<span class="w">                 </span>cpu-load:<span class="w"> </span><span class="m">0</span>%
-<span class="w">           </span>free-hdd-space:<span class="w"> </span><span class="m">4480</span>.0KiB
-<span class="w">          </span>total-hdd-space:<span class="w"> </span><span class="m">16</span>.0MiB
-<span class="w">  </span>write-sect-since-reboot:<span class="w"> </span><span class="m">10204</span>
-<span class="w">         </span>write-sect-total:<span class="w"> </span><span class="m">13187</span>
-<span class="w">               </span>bad-blocks:<span class="w"> </span><span class="m">0</span>%
-<span class="w">        </span>architecture-name:<span class="w"> </span>mmips
-<span class="w">               </span>board-name:<span class="w"> </span>hEX
-<span class="w">                 </span>platform:<span class="w"> </span>MikroTik
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/system/resource/print</code></pre></p>
+<pre class="highlight"><code class="language-bash">                  version: 7.6 (stable)
+               build-time: Oct/17/2022 10:55:40
+         factory-software: 6.46.3
+              free-memory: 203.9MiB
+             total-memory: 256.0MiB
+                      cpu: MIPS 1004Kc V2.15
+                cpu-count: 4
+            cpu-frequency: 880MHz
+                 cpu-load: 0%
+           free-hdd-space: 4480.0KiB
+          total-hdd-space: 16.0MiB
+  write-sect-since-reboot: 10204
+         write-sect-total: 13187
+               bad-blocks: 0%
+        architecture-name: mmips
+               board-name: hEX
+                 platform: MikroTik
+</code></pre>
 <h3 id="block-diagram">Block Diagram</h3>
 <p><img alt="Block" src="https://i.mt.lv/cdn/product_files/RB750Gr3-esw3_190642.png" /></p>
 <h3 id="initial-setup">Initial setup</h3>
@@ -189,199 +191,175 @@ Public IP from provider is routed to the Mikrotik Routerboard.</p>
 Power off routerboard, press reset button, power on and hold button until light flashes</p>
 <p>2) Router will have DHCP server running on ether1
 Connect with cable and get IP.
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>admin@&lt;routerip&gt;<span class="w"> </span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">ssh admin@&lt;routerip&gt; </code></pre>
 No password is set by default</p>
 <h3 id="choose-options">Choose options</h3>
 <p>1) Miktrotik RouterBoard Wifi =&gt; better disable it, ADSL modem is proably better or buy custom access point 
-<div class="highlight"><pre><span></span><code>/interface<span class="w"> </span>wireless<span class="w"> </span>disable<span class="w"> </span>wlan
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/interface wireless disable wlan</code></pre>
 2) Disable Default DHCP-Server on WAN Interface (can also be changed to disable)
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>dhcp-server<span class="w"> </span>remove<span class="w"> </span><span class="m">0</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/ip dhcp-server remove 0</code></pre>
 3) Set Default DHCP Client on WAN interface to not take dns servers from ADSL modem
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>dhcp-client<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether1<span class="w"> </span>use-peer-dns<span class="o">=</span>yes<span class="w"> </span>use-peer-ntp<span class="o">=</span>no<span class="w"> </span>add-default-route<span class="o">=</span>yes<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>no
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/ip dhcp-client set 0 interface=ether1 use-peer-dns=yes use-peer-ntp=no add-default-route=yes disabled=no</code></pre>
 4) Set custom DNS (to f.e. Quad9 + Allow LAN access)
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>dns<span class="w"> </span><span class="nb">set</span><span class="w"> </span>allow-remote-requests<span class="o">=</span>yes<span class="w"> </span><span class="nv">servers</span><span class="o">=</span><span class="m">9</span>.9.9.9,149.112.112.112
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/ip dns set allow-remote-requests=yes servers=9.9.9.9,149.112.112.112</code></pre>
 (Add IPv6 optional: 2620:fe::fe, 2620:fe::9)</p>
 <h3 id="create-and-setup-bridge">Create and setup bridge</h3>
-<p><div class="highlight"><pre><span></span><code>/interface<span class="w"> </span>bridge
-add<span class="w"> </span><span class="nv">name</span><span class="o">=</span>bridge1<span class="w"> </span>protocol-mode<span class="o">=</span>none
-</code></pre></div>
+<p><pre class="highlight"><code class="language-bash">/interface bridge
+add name=bridge1 protocol-mode=none</code></pre>
 Interface Lists for better firewalling</p>
-<div class="highlight"><pre><span></span><code>/interface<span class="w"> </span>list
-add<span class="w"> </span><span class="nv">name</span><span class="o">=</span>LANclient
-add<span class="w"> </span><span class="nv">name</span><span class="o">=</span>LANserver
-add<span class="w"> </span><span class="nv">name</span><span class="o">=</span>LANiot
-add<span class="w"> </span><span class="nv">name</span><span class="o">=</span>LAN
-add<span class="w"> </span><span class="nv">name</span><span class="o">=</span>WLAN
+<pre class="highlight"><code class="language-bash">/interface list
+add name=LANclient
+add name=LANserver
+add name=LANiot
+add name=LAN
+add name=WLAN
 
-/interface<span class="w"> </span>list<span class="w"> </span>member
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether2<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LAN
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether2<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LANclient
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether3<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LAN
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether3<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LANclient
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether4<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LAN
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether4<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LANserver
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether5<span class="w"> </span><span class="nv">list</span><span class="o">=</span>LAN
-add<span class="w"> </span><span class="nv">interface</span><span class="o">=</span>ether5<span class="w"> </span><span class="nv">list</span><span class="o">=</span>WLAN
+/interface list member
+add interface=ether2 list=LAN
+add interface=ether2 list=LANclient
+add interface=ether3 list=LAN
+add interface=ether3 list=LANclient
+add interface=ether4 list=LAN
+add interface=ether4 list=LANserver
+add interface=ether5 list=LAN
+add interface=ether5 list=WLAN
 
-<span class="c1">#Default: ether2-5 belong to bridge</span>
-</code></pre></div>
+#Default: ether2-5 belong to bridge</code></pre>
 <h3 id="dhcp-server">DHCP Server</h3>
 <p>Give LAN (DHCP Server) an IP
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>address<span class="w"> </span>add<span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">&quot;&lt;IP addr&gt;/24&quot;</span><span class="w"> </span><span class="nv">interface</span><span class="o">=</span>bridge
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip address add address="&lt;IP addr&gt;/24" interface=bridge</code></pre></p>
 <p>Setup DHCP for LAN bridge
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;lan&quot;</span><span class="w"> </span><span class="nv">ranges</span><span class="o">=</span><span class="s2">&quot;&lt;range&gt;&quot;</span>
-/ip<span class="w"> </span>dhcp-server<span class="w"> </span>network<span class="w"> </span>add<span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">&quot;&lt;addrpool&gt;/24&quot;</span><span class="w"> </span><span class="nv">gateway</span><span class="o">=</span><span class="s2">&quot;&lt;routeraddr&gt;&quot;</span><span class="w"> </span><span class="nv">netmask</span><span class="o">=</span><span class="s2">&quot;255.255.255.0&quot;</span><span class="w"> </span>dns-server<span class="o">=</span><span class="s2">&quot;&lt;routeraddr&gt;&quot;</span><span class="w"> </span><span class="nv">domain</span><span class="o">=</span><span class="s2">&quot;intranet&quot;</span>
-/ip<span class="w"> </span>dhcp-server<span class="w"> </span>add<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;lan&quot;</span><span class="w"> </span><span class="nv">interface</span><span class="o">=</span>bridge<span class="w"> </span>lease-time<span class="o">=</span>1h<span class="w"> </span>address-pool<span class="o">=</span>lan<span class="w"> </span><span class="nv">authoritative</span><span class="o">=</span>yes<span class="w"> </span>bootp-support<span class="o">=</span>none
-/ip<span class="w"> </span>dhcp-server<span class="w"> </span>lease<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="m">0</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip pool add name="lan" ranges="&lt;range&gt;"
+/ip dhcp-server network add address="&lt;addrpool&gt;/24" gateway="&lt;routeraddr&gt;" netmask="255.255.255.0" dns-server="&lt;routeraddr&gt;" domain="intranet"
+/ip dhcp-server add name="lan" interface=bridge lease-time=1h address-pool=lan authoritative=yes bootp-support=none
+/ip dhcp-server lease enable 0</code></pre></p>
 <p>Internal DNS names
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>dns<span class="w"> </span>static<span class="w"> </span>add<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;&lt;gw.intranet&gt;&quot;</span><span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">&quot;&lt;router addr&gt;&quot;</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span>1h
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/ip dns static add name="&lt;gw.intranet&gt;" address="&lt;router addr&gt;" ttl=1h</code></pre>
 Static DHCP leases with DNS name
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>dns<span class="w"> </span>static<span class="w"> </span>add<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;&lt;devicename&gt;.intranet&quot;</span><span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">&quot;&lt;addr&gt;&quot;</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span>1h
-/ip<span class="w"> </span>dhcp-server<span class="w"> </span>lease<span class="w"> </span>add<span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">&quot;&lt;addr&gt;&quot;</span><span class="w"> </span>mac-address<span class="o">=</span><span class="s2">&quot;&lt;mac&gt;&quot;</span><span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;&lt;devicename&gt;.intranet&quot;</span><span class="w"> </span><span class="nv">server</span><span class="o">=</span>lan
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip dns static add name="&lt;devicename&gt;.intranet" address="&lt;addr&gt;" ttl=1h
+/ip dhcp-server lease add address="&lt;addr&gt;" mac-address="&lt;mac&gt;" comment="&lt;devicename&gt;.intranet" server=lan</code></pre></p>
 <h3 id="firewalling">Firewalling</h3>
 <p>1) Setup WAN port
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>firewall<span class="w"> </span>nat
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>masquerade<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>srcnat<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Default masq&quot;</span><span class="w"> </span>out-interface<span class="o">=</span>ether1
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip firewall nat
+add action=masquerade chain=srcnat comment="Default masq" out-interface=ether1</code></pre></p>
 <p>2) Setup WAN firewall
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>firewall<span class="w"> </span>filter
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>accept<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>input<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Accept established related&quot;</span><span class="w"> </span>connection-state<span class="o">=</span>established,related
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>accept<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>input<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Allow LAN access to router and Internet&quot;</span><span class="w"> </span><span class="k">in</span>-interface-list<span class="o">=</span>LAN
-<span class="c1">#Optional: add action=accept chain=input comment=&quot;Allow ping ICMP from anywhere&quot; protocol=icmp</span>
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>drop<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>input<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Drop all other input&quot;</span>
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>accept<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>forward<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Accept established related&quot;</span><span class="w"> </span>connection-state<span class="o">=</span>established,related
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>accept<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>forward<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Allow LAN access to router and Internet&quot;</span><span class="w"> </span>connection-state<span class="o">=</span>new<span class="w"> </span><span class="k">in</span>-interface-list<span class="o">=</span>LAN
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>accept<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>forward<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Accept Port forwards&quot;</span><span class="w"> </span>connection-nat-state<span class="o">=</span>dstnat<span class="w"> </span><span class="k">in</span>-interface<span class="o">=</span>ether1
-add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>drop<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>forward<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Drop all other forward&quot;</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip firewall filter
+add action=accept chain=input comment="Accept established related" connection-state=established,related
+add action=accept chain=input comment="Allow LAN access to router and Internet" in-interface-list=LAN
+#Optional: add action=accept chain=input comment="Allow ping ICMP from anywhere" protocol=icmp
+add action=drop chain=input comment="Drop all other input"
+add action=accept chain=forward comment="Accept established related" connection-state=established,related
+add action=accept chain=forward comment="Allow LAN access to router and Internet" connection-state=new in-interface-list=LAN
+add action=accept chain=forward comment="Accept Port forwards" connection-nat-state=dstnat in-interface=ether1
+add action=drop chain=forward comment="Drop all other forward"</code></pre></p>
 <p>3) Optional: Filter outbound connections from internal devices (f.e. IoT devices)
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>firewall<span class="w"> </span>filter<span class="w"> </span>add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>drop<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>output<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Block outgoing traffic from IoT-device&quot;</span><span class="w"> </span>src-address<span class="o">=</span>&lt;device-ip&gt;
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip firewall filter add action=drop chain=output comment="Block outgoing traffic from IoT-device" src-address=&lt;device-ip&gt;</code></pre></p>
 <h3 id="port-forwarding">Port Forwarding</h3>
 <p>VPN (Wireguard)
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>firewall<span class="w"> </span>nat<span class="w"> </span>add<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>dstnat<span class="w"> </span><span class="k">in</span>-interface<span class="o">=</span>ether1<span class="w"> </span>dst-port<span class="o">=</span><span class="m">51820</span><span class="w"> </span><span class="nv">action</span><span class="o">=</span>dst-nat<span class="w"> </span><span class="nv">protocol</span><span class="o">=</span>udp<span class="w"> </span>to-address<span class="o">=</span>&lt;vpn-ip&gt;<span class="w"> </span>to-port<span class="o">=</span><span class="m">51820</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=51820 action=dst-nat protocol=udp to-address=&lt;vpn-ip&gt; to-port=51820</code></pre>
 Nginx Reverse Proxy
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>firewall<span class="w"> </span>nat<span class="w"> </span>add<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>dstnat<span class="w"> </span><span class="k">in</span>-interface<span class="o">=</span>ether1<span class="w"> </span>dst-port<span class="o">=</span><span class="m">443</span><span class="w"> </span><span class="nv">action</span><span class="o">=</span>dst-nat<span class="w"> </span><span class="nv">protocol</span><span class="o">=</span>tcp<span class="w"> </span>to-address<span class="o">=</span>&lt;serveraddr&gt;<span class="w"> </span>to-port<span class="o">=</span><span class="m">443</span>
-/ip<span class="w"> </span>firewall<span class="w"> </span>nat<span class="w"> </span>add<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>dstnat<span class="w"> </span><span class="k">in</span>-interface<span class="o">=</span>ether1<span class="w"> </span>dst-port<span class="o">=</span><span class="m">80</span><span class="w"> </span><span class="nv">action</span><span class="o">=</span>dst-nat<span class="w"> </span><span class="nv">protocol</span><span class="o">=</span>tcp<span class="w"> </span>to-address<span class="o">=</span>&lt;serveraddr&gt;<span class="w"> </span>to-port<span class="o">=</span><span class="m">80</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=443 action=dst-nat protocol=tcp to-address=&lt;serveraddr&gt; to-port=443
+/ip firewall nat add chain=dstnat in-interface=ether1 dst-port=80 action=dst-nat protocol=tcp to-address=&lt;serveraddr&gt; to-port=80</code></pre></p>
 <h3 id="security">Security</h3>
 <p>Turn off unneeded helpers
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>firewall<span class="w"> </span>service-port
-<span class="nb">set</span><span class="w"> </span>ftp<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>tftp<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>irc<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>h323<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>sip<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>pptp<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>udplite<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>dccp<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>sctp<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip firewall service-port
+set ftp disabled=yes
+set tftp disabled=yes
+set irc disabled=yes
+set h323 disabled=yes
+set sip disabled=yes
+set pptp disabled=yes
+set udplite disabled=yes
+set dccp disabled=yes
+set sctp disabled=yes</code></pre></p>
 <p>Turn off unneeded services || VERIFY if above steps worked, otherwise it might get complicated to connect to SSH service from wrong IP range</p>
 <blockquote>
 <p><b>This also disables the GUI (avoid disabling winbox, www) if needed!</b></p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>service
-<span class="nb">set</span><span class="w"> </span>telnet<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>ftp<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>api<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>ssh<span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="m">192</span>.168.1.0/24
-<span class="nb">set</span><span class="w"> </span>winbox<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>api-ssl<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>www<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-<span class="nb">set</span><span class="w"> </span>www-ssl<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>yes
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set api disabled=yes
+set ssh address=192.168.1.0/24
+set winbox disabled=yes
+set api-ssl disabled=yes
+set www disabled=yes
+set www-ssl disabled=yes</code></pre>
 <p>Misc IP settings
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>ssh
-<span class="nb">set</span><span class="w"> </span>strong-crypto<span class="o">=</span>yes
-/ip<span class="w"> </span>settings
-<span class="nb">set</span><span class="w"> </span>rp-filter<span class="o">=</span>no<span class="w"> </span>secure-redirects<span class="o">=</span>yes<span class="w"> </span>send-redirects<span class="o">=</span>yes<span class="w"> </span>tcp-syncookies<span class="o">=</span>no
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip ssh
+set strong-crypto=yes
+/ip settings
+set rp-filter=no secure-redirects=yes send-redirects=yes tcp-syncookies=no</code></pre></p>
 <p>Remove/disable default ip at last
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>address<span class="w"> </span>remove<span class="w"> </span><span class="m">0</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip address remove 0</code></pre></p>
 <p>SSH Access with ssh-keys
-<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;PEM&#39;</span>
-<span class="c1">#Mikrotik only  accepts PEM formatted keys (you can convert your key like this:)</span>
-ssh-keygen<span class="w"> </span>-f<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>-e<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;PEM&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.ssh/id_rsa.pub.pem
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">ssh-keygen -t rsa -b 4096 -m 'PEM'
+#Mikrotik only  accepts PEM formatted keys (you can convert your key like this:)
+ssh-keygen -f ~/.ssh/id_rsa.pub -e -m 'PEM' &gt;&gt; ~/.ssh/id_rsa.pub.pem</code></pre></p>
 <p>Copy the pubkey to persistent storage on the routerboard (flash/id_rsa.pub.pem)</p>
 <p>On the router:
-<div class="highlight"><pre><span></span><code>user<span class="w"> </span>ssh-keys<span class="w"> </span>import<span class="w"> </span>public-key-file<span class="o">=</span><span class="s2">&quot;flash/id_rsa.pub.pem&quot;</span><span class="w"> </span><span class="nv">user</span><span class="o">=</span>&lt;username&gt;
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">user ssh-keys import public-key-file="flash/id_rsa.pub.pem" user=&lt;username&gt;</code></pre></p>
 <h3 id="graphs">Graphs</h3>
 <p>Per default resource graph for CPU, Memory and Disk usage is collected every 5 minutes. 
 The graph can be accessed under: http://<i>RouterIP</i>/graphs
-<div class="highlight"><pre><span></span><code>/ip<span class="w"> </span>service<span class="w"> </span><span class="nb">set</span><span class="w"> </span>www<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>no
-/tool<span class="w"> </span>graphing<span class="w"> </span>resource<span class="w"> </span>add<span class="w"> </span>allow-address<span class="w"> </span><span class="s2">&quot;192.168.1.0/24&quot;</span>
-/tool<span class="w"> </span>graphing<span class="w"> </span>resource<span class="w"> </span>add<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>no
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">/ip service set www disabled=no
+/tool graphing resource add allow-address "192.168.1.0/24"
+/tool graphing resource add disabled=no</code></pre></p>
 <p><b>Custom data retrieval</b></p>
 <p>bash script.sh <i>username</i> <i>router IP</i>  <br></p>
 <p>Description: Creates a single ssh connection to the router (ssh-keys recommended first), runs multiple commands every 0.5 seconds, outputs it to stdout <br>
 Optional: redirect output to log file <code>&gt;&gt; router-stats.log</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">#</span>
-<span class="c1"># Persistent SSH Connection accross multiple commands</span>
-<span class="c1">#</span>
-<span class="nv">user</span><span class="o">=</span><span class="nv">$1</span>
-<span class="nv">target</span><span class="o">=</span><span class="nv">$2</span>
+<pre class="highlight"><code class="language-bash">#
+# Persistent SSH Connection accross multiple commands
+#
+user=$1
+target=$2
 
-<span class="nv">host</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$user</span><span class="s2">@</span><span class="nv">$target</span><span class="s2">&quot;</span>
+host="$user@$target"
 
-<span class="nv">tmp_dir</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;/tmp/</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">.XXXXXX&quot;</span><span class="k">)</span>
-<span class="nv">ssh_control_socket</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$tmp_dir</span><span class="s2">/ssh_control_socket&quot;</span>
+tmp_dir=$(mktemp -d "/tmp/$(basename "$0").XXXXXX")
+ssh_control_socket="$tmp_dir/ssh_control_socket"
 
-<span class="c1"># Setup control master</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;: Initiating SSH Master socket to </span><span class="nv">$host</span><span class="s2">&quot;</span>
-ssh<span class="w"> </span>-f<span class="w"> </span>-N<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;ControlMaster=yes&#39;</span><span class="w"> </span>-S<span class="w"> </span><span class="nv">$ssh_control_socket</span><span class="w"> </span><span class="nv">$host</span><span class="w"> </span>
-<span class="nv">remote_cmd</span><span class="o">=</span><span class="s2">&quot;ssh -o LogLevel=QUIET -S </span><span class="nv">$ssh_control_socket</span><span class="s2"> </span><span class="nv">$host</span><span class="s2">&quot;</span>
+# Setup control master
+echo $(date)": Initiating SSH Master socket to $host"
+ssh -f -N -o 'ControlMaster=yes' -S $ssh_control_socket $host 
+remote_cmd="ssh -o LogLevel=QUIET -S $ssh_control_socket $host"
 
-<span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
-<span class="w">    </span><span class="c1">#Retrieve Number of IPv6 Neighbor discovery cache entries</span>
-<span class="w">    </span><span class="nv">entries</span><span class="o">=</span><span class="k">$(</span><span class="nv">$remote_cmd</span><span class="w"> </span>/ipv6<span class="w"> </span>neighbor/<span class="w"> </span>print<span class="k">)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$entries</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;^[[:space:]]*$&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+while true; do 
+    #Retrieve Number of IPv6 Neighbor discovery cache entries
+    entries=$($remote_cmd /ipv6 neighbor/ print)
+    echo "$entries" | cut -d " " -f1 | grep -v -e '^[[:space:]]*$' | tail -n 1
 
-<span class="w">    </span><span class="c1">#Retrieve CPU Usage</span>
-<span class="w">    </span><span class="nv">cpu</span><span class="o">=</span><span class="k">$(</span><span class="nv">$remote_cmd</span><span class="w"> </span>:put<span class="w"> </span><span class="o">[</span>/system<span class="w"> </span>resource<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;cpu-load&quot;</span><span class="o">]</span><span class="k">)</span>
-<span class="w">    </span><span class="c1">#$($remote_cmd /system resource cpu print)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cpu</span><span class="s2">&quot;</span>
+    #Retrieve CPU Usage
+    cpu=$($remote_cmd :put [/system resource get "cpu-load"])
+    #$($remote_cmd /system resource cpu print)
+    echo "$cpu"
 
-<span class="w">    </span><span class="c1">#Retrieve free RAM</span>
-<span class="w">    </span><span class="nv">ram</span><span class="o">=</span><span class="k">$(</span><span class="nv">$remote_cmd</span><span class="w"> </span>:put<span class="w"> </span><span class="o">[</span>/system<span class="w"> </span>resource<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;free-memory&quot;</span><span class="o">]</span><span class="k">)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ram</span><span class="s2">&quot;</span>
+    #Retrieve free RAM
+    ram=$($remote_cmd :put [/system resource get "free-memory"])
+    echo "$ram"
 
-<span class="w">    </span><span class="c1">#Retrieve free HDD Space</span>
-<span class="w">    </span><span class="nv">hdd</span><span class="o">=</span><span class="k">$(</span><span class="nv">$remote_cmd</span><span class="w"> </span>:put<span class="w"> </span><span class="o">[</span>/system<span class="w"> </span>resource<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;free-hdd-space&quot;</span><span class="o">]</span><span class="k">)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$hdd</span><span class="s2">&quot;</span>
+    #Retrieve free HDD Space
+    hdd=$($remote_cmd :put [/system resource get "free-hdd-space"])
+    echo "$hdd"
 
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;---&quot;</span>
+    echo "---"
 
-<span class="w">    </span>sleep<span class="w"> </span><span class="m">0</span>.5
-<span class="k">done</span>
-<span class="c1">#Close Connection</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;: Exiting SSH Master socket to </span><span class="nv">$host</span><span class="s2">&quot;</span>
-ssh<span class="w"> </span>-S<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ssh_control_socket</span><span class="s2">&quot;</span><span class="w"> </span>-O<span class="w"> </span>check<span class="w"> </span><span class="nv">$host</span>
-ssh<span class="w"> </span>-S<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ssh_control_socket</span><span class="s2">&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="nv">$host</span>
-</code></pre></div></p>
+    sleep 0.5
+done
+#Close Connection
+echo $(date)": Exiting SSH Master socket to $host"
+ssh -S "$ssh_control_socket" -O check $host
+ssh -S "$ssh_control_socket" -O exit $host</code></pre></p>
     </article>
 </section>
 <!-- endblock -->
-                
-                
-            </main>
-
             
-                    <!-- block preview -->
+
+        </main>
+
+        
+        <!-- block preview -->
     <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
         <div class="col themed-grid-col">
             <a rel="prev" href="../emailstandards/" class="nav-link">
@@ -396,25 +374,25 @@ ssh<span class="w"> </span>-S<span class="w"> </span><span class="s2">&quot;</sp
         </div>
     </div>
 <!-- endblock -->
-            
+        
 
-            
-            
-        </div>
+        
+        
+    </div>
 
-            <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
-            <script src="../../assets/js/bootstrap.bundle.min.js""></script>
-            <script src="../../assets/js/main.min.js""></script>
-                <script src="../../js/mkdocs-charts-plugin.js" defer></script>
-                <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
-                <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
-                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
-                <script src="../../assets/js/vega-render.js" defer></script>
-                <script src="../../assets/js/modal.js" defer></script>
-                <script src="../../assets/js/bootstrap.bundle.min.js" defer></script>
-                <script src="../../assets/js/packet-anim.js" defer></script>
-                <script src="../../search/main.js" defer></script>
+    <script src="../../assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/main.min.js"></script>
+    <script src="../../js/mkdocs-charts-plugin.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
+    <script src="../../assets/js/vega-render.js" defer></script>
+    <script src="../../assets/js/modal.js" defer></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../assets/js/packet-anim.js" defer></script>
+    <script src="../../search/main.js" defer></script>
 
-    </body>
+</body>
 
 </html>

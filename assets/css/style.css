@@ -395,3 +395,6 @@ body.modal-open {
   overflow: hidden;
 }
 
+.pub-year-block {
+  margin-left: 1.5rem;
+}
