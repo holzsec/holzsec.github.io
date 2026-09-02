@@ -1,59 +1,56 @@
 <!doctype html>
 <html data-bs-theme="">
+    <head>
+                <title>📦 Self Driving Packets!?! - holzsec - Florian Holzbauer</title>
 
-<head>
-    <title>📦 Self Driving Packets!?! - holzsec - Florian Holzbauer
-    </title>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            
+            
 
-    
-    
-    
+            
+                <link  rel="icon" type="image/x-icon" href="../../assets/img/holzsec.webp">
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+                <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/grayscale-dark.min.css">
+                <script>hljs.highlightAll();</script>
 
-    
-    <link rel="icon" type="image/x-icon" href="../../assets/img/holzsec.webp">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/grayscale-dark.min.css">
-    <script>hljs.highlightAll();</script>
-    
+        <script>var base_url = '../..';</script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script>var base_url = '../..';</script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../../assets/css/root.min.css">
+            <link rel="stylesheet" href="../../assets/css/main.min.css">
+            <link rel="stylesheet" href="../../assets/css/media.min.css">
+            <link rel="stylesheet" href="../../assets/css/mkdocstrings.min.css">
+                <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+                <link href="../../assets/css/main.min.css" rel="stylesheet">
+                <link href="../../assets/css/root.min.css" rel="stylesheet">
+                <link href="../../assets/css/style.css" rel="stylesheet">
+                <script src="../../js/mkdocs-charts-plugin.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+                <script src="../../assets/js/vega-render.js"></script>
+                <script src="../../assets/js/modal.js"></script>
+                <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+                <script src="../../assets/js/packet-anim.js"></script>
+                <script src="../../search/main.js"></script>
 
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/root.min.css">
-    <link rel="stylesheet" href="../../assets/css/main.min.css">
-    <link rel="stylesheet" href="../../assets/css/media.min.css">
-    <link rel="stylesheet" href="../../assets/css/mkdocstrings.min.css">
-    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/css/main.min.css" rel="stylesheet">
-    <link href="../../assets/css/root.min.css" rel="stylesheet">
-    <link href="../../assets/css/style.css" rel="stylesheet">
-    <script src="../../js/mkdocs-charts-plugin.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="../../assets/js/vega-render.js"></script>
-    <script src="../../assets/js/modal.js"></script>
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/js/packet-anim.js"></script>
-    <script src="../../search/main.js"></script>
+            
+                
+            
+          
+    </head>
 
-    
-    
-    
-    
-</head>
-
-<body>
-    <div class="container py-3">
-        <header>
-            <!-- block header -->
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
 <nav class="navbar navbar-expand-xl border-bottom">
     <div class="container-fluid">
         
@@ -139,9 +136,9 @@
     </div>
 </nav>
 <!--  endblock -->
-        </header>
+            </header>
 
-        <main><!-- block search -->
+            <main><!-- block search -->
 <div class="collapse" id="collapseExample">
     <div role="search" class="search-box">
         <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -152,8 +149,8 @@
 </div>
 <!-- endblock -->
 
-            
-            <!-- block content -->
+                
+                        <!-- block content -->
 <section class="container post" id="component-content">
     <article>
         <header>
@@ -176,71 +173,75 @@
 <p><code>Why not give packets the route themselves?</code></p>
 <p>Why fill routers with path knowledge when we can simply embed that knowledge inside each packet? Then the packets can “drive” themselves from source to destination.</p>
 <p>Key idea: We take the AS path from BGP, compress it nicely, and tuck it directly into the packet, e.g. through a new IPv6 extension header. Let’s call it the Path Header. Each “self-driving” packet now knows exactly which route to follow. Routers become simpler-- they just follow the instructions that the packet is carrying around!</p>
-<pre class="highlight"><code class="language-sh">+---------------+----------------+------------------------+  
-|  IPv6 header  |   Path header  | TCP header + data      |  
-|               |                |                        |  
-| Next Header = |  Next Header = |                        |  
-|     Path      |      TCP       |                        |  
+<div class="highlight"><pre><span></span><code>+---------------+----------------+------------------------+<span class="w">  </span>
+<span class="p">|</span><span class="w">  </span>IPv6<span class="w"> </span>header<span class="w">  </span><span class="p">|</span><span class="w">   </span>Path<span class="w"> </span>header<span class="w">  </span><span class="p">|</span><span class="w"> </span>TCP<span class="w"> </span>header<span class="w"> </span>+<span class="w"> </span>data<span class="w">      </span><span class="p">|</span><span class="w">  </span>
+<span class="p">|</span><span class="w">               </span><span class="p">|</span><span class="w">                </span><span class="p">|</span><span class="w">                        </span><span class="p">|</span><span class="w">  </span>
+<span class="p">|</span><span class="w"> </span>Next<span class="w"> </span><span class="nv">Header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>Next<span class="w"> </span><span class="nv">Header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">|</span><span class="w">                        </span><span class="p">|</span><span class="w">  </span>
+<span class="p">|</span><span class="w">     </span>Path<span class="w">      </span><span class="p">|</span><span class="w">      </span>TCP<span class="w">       </span><span class="p">|</span><span class="w">                        </span><span class="p">|</span><span class="w">  </span>
 +---------------+----------------+------------------------+
 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|  Next Header  |   Path Len    |                               |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
-|                                                               |
-.                                                               .
-.                           AS Path                             .
-.                                                               .
-|                                                               |
+<span class="p">|</span><span class="w">  </span>Next<span class="w"> </span>Header<span class="w">  </span><span class="p">|</span><span class="w">   </span>Path<span class="w"> </span>Len<span class="w">    </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span>
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+<span class="w">                               </span>+
+<span class="p">|</span><span class="w">                                                               </span><span class="p">|</span>
+.<span class="w">                                                               </span>.
+.<span class="w">                           </span>AS<span class="w"> </span>Path<span class="w">                             </span>.
+.<span class="w">                                                               </span>.
+<span class="p">|</span><span class="w">                                                               </span><span class="p">|</span>
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 
-      Next Header         8-bit selector.  Identifies the type of header
-                          immediately following the Path
-                          header. Uses the same values as the IPv4
-                          Protocol field [IANA-PN].
+<span class="w">      </span>Next<span class="w"> </span>Header<span class="w">         </span><span class="m">8</span>-bit<span class="w"> </span>selector.<span class="w">  </span>Identifies<span class="w"> </span>the<span class="w"> </span><span class="nb">type</span><span class="w"> </span>of<span class="w"> </span>header
+<span class="w">                          </span>immediately<span class="w"> </span>following<span class="w"> </span>the<span class="w"> </span>Path
+<span class="w">                          </span>header.<span class="w"> </span>Uses<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>values<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>IPv4
+<span class="w">                          </span>Protocol<span class="w"> </span>field<span class="w"> </span><span class="o">[</span>IANA-PN<span class="o">]</span>.
 
-      Path Len            8-bit unsigned integer.  Length of the
-                          Path header in 8-octet units,
-                          not including the first 8 octets.
+<span class="w">      </span>Path<span class="w"> </span>Len<span class="w">            </span><span class="m">8</span>-bit<span class="w"> </span>unsigned<span class="w"> </span>integer.<span class="w">  </span>Length<span class="w"> </span>of<span class="w"> </span>the
+<span class="w">                          </span>Path<span class="w"> </span>header<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">8</span>-octet<span class="w"> </span>units,
+<span class="w">                          </span>not<span class="w"> </span>including<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span><span class="m">8</span><span class="w"> </span>octets.
 
-      AS Path             Variable-length field, of length such that the
-                          complete Path header is a multiple of 8 octets long.</code></pre>
+<span class="w">      </span>AS<span class="w"> </span>Path<span class="w">             </span>Variable-length<span class="w"> </span>field,<span class="w"> </span>of<span class="w"> </span>length<span class="w"> </span>such<span class="w"> </span>that<span class="w"> </span>the
+<span class="w">                          </span><span class="nb">complete</span><span class="w"> </span>Path<span class="w"> </span>header<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>multiple<span class="w"> </span>of<span class="w"> </span><span class="m">8</span><span class="w"> </span>octets<span class="w"> </span>long.
+</code></pre></div>
 <h2 id="how-it-works">How It Works</h2>
 <p>Route Updates: Whenever an Autonomous System (AS) learns a new route (say 2001:db8::/32), it sends an “update” not to all its neighbors, but to a hierarchical <em>Internet Routing System (IRS)</em></p>
 <p>DNS + IRS: We already store domain names in DNS, so let’s store our IP routing data in a parallel, DNS-like system (the “IRS”). This hierarchical structure might look something like:</p>
-<pre class="highlight"><code class="language-sh">RIR Server  
-├── AFRINIC  
-├── APNIC  
-├── ARIN  
-├── LACNIC  
-└── RIPE NCC  
-    └── 2001:db8::/32 -&gt; Origin AS1
-        Path from (AS6): [6,5,3,1]
+<div class="highlight"><pre><span></span><code>RIR<span class="w"> </span>Server<span class="w">  </span>
+├──<span class="w"> </span>AFRINIC<span class="w">  </span>
+├──<span class="w"> </span>APNIC<span class="w">  </span>
+├──<span class="w"> </span>ARIN<span class="w">  </span>
+├──<span class="w"> </span>LACNIC<span class="w">  </span>
+└──<span class="w"> </span>RIPE<span class="w"> </span>NCC<span class="w">  </span>
+<span class="w">    </span>└──<span class="w"> </span><span class="m">2001</span>:db8::/32<span class="w"> </span>-&gt;<span class="w"> </span>Origin<span class="w"> </span>AS1
+<span class="w">        </span>Path<span class="w"> </span>from<span class="w"> </span><span class="o">(</span>AS6<span class="o">)</span>:<span class="w"> </span><span class="o">[</span><span class="m">6</span>,5,3,1<span class="o">]</span>
 
-         (AS1)
-          ^  \
-          |   \
-          |    \
-        (AS2)--(AS3)
-         ^       ^
-         |       |
-         |       |
-        (AS4)   (AS5)
-           \     /
-            \   /
-             (AS6)</code></pre>
+<span class="w">         </span><span class="o">(</span>AS1<span class="o">)</span>
+<span class="w">          </span>^<span class="w">  </span><span class="se">\</span>
+<span class="w">          </span><span class="p">|</span><span class="w">   </span><span class="se">\</span>
+<span class="w">          </span><span class="p">|</span><span class="w">    </span><span class="se">\</span>
+<span class="w">        </span><span class="o">(</span>AS2<span class="o">)</span>--<span class="o">(</span>AS3<span class="o">)</span>
+<span class="w">         </span>^<span class="w">       </span>^
+<span class="w">         </span><span class="p">|</span><span class="w">       </span><span class="p">|</span>
+<span class="w">         </span><span class="p">|</span><span class="w">       </span><span class="p">|</span>
+<span class="w">        </span><span class="o">(</span>AS4<span class="o">)</span><span class="w">   </span><span class="o">(</span>AS5<span class="o">)</span>
+<span class="w">           </span><span class="se">\ </span><span class="w">    </span>/
+<span class="w">            </span><span class="se">\ </span><span class="w">  </span>/
+<span class="w">             </span><span class="o">(</span>AS6<span class="o">)</span>
+</code></pre></div>
 <p>Path Lookup: When you want to send a packet to 2001:db8::1, you do a “route query” (similar to a DNS lookup) to the IRS, retrieving the best path from your AS 6: AS 6 -&gt; AS 1. Due to link parameters, we assume the best path in this case is <code>[6,5,3,1]</code>.</p>
 <p>Self-Driving Packet: Armed with that path, your packet sets the “Path Header” to <code>[6,5,3,1]</code>, then sets out on its journey. At each hop, the router strips the leading AS from the path (since you’ve “arrived” there) and forwards it to the next AS. Eventually, it reaches the destination.</p>
 <p>No more monstrous BGP updates on every router. No more different views of the Internet from every router. Instead, each packet is responsible for carrying its own routing instructions.</p>
 <h2 id="a-quick-example">A Quick Example</h2>
 <p>You want to send a packet to 2001:db8::1:</p>
-<pre class="highlight"><code>You ask DNS: “Which IP is example.org?” DNS says 2001:db8::1.
+<div class="highlight"><pre><span></span><code>You ask DNS: “Which IP is example.org?” DNS says 2001:db8::1.
 
-You ask the IRS: “Which path do I take to get to 2001:db8::1?” IRS says “[6,5,3,1]”</code></pre>
+You ask the IRS: “Which path do I take to get to 2001:db8::1?” IRS says “[6,5,3,1]”
+</code></pre></div>
 <p>Form the Self-Driving Packet:</p>
-<pre class="highlight"><code>IPv6 header: Destination = 2001:db8::1  
+<div class="highlight"><pre><span></span><code>IPv6 header: Destination = 2001:db8::1  
 Path Header: Next Header = TCP, Path = [6,5,3,1] 
-TCP + Data: "Hello, 2001:db8::1"</code></pre>
+TCP + Data: &quot;Hello, 2001:db8::1&quot;
+</code></pre></div>
 <p>Off It Goes: The router in AS5 sees it has “5” at the top of the path, recognizes itself, pops off “5,” sees the next is “3,” and forwards the packet to AS3.</p>
 <p align="center">
 <img src="../../assets/img/posts/selfdrivingpackets/selfgoing.png" style="max-height:50rem; min-width: 30%; max-width: 75%; margin: auto;" />
@@ -330,12 +331,12 @@ TCP + Data: "Hello, 2001:db8::1"</code></pre>
     </article>
 </section>
 <!-- endblock -->
+                
+                
+            </main>
+
             
-
-        </main>
-
-        
-        <!-- block preview -->
+                    <!-- block preview -->
     <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
         <div class="col themed-grid-col">
             <a rel="prev" href="../mikrotik/" class="nav-link">
@@ -350,25 +351,25 @@ TCP + Data: "Hello, 2001:db8::1"</code></pre>
         </div>
     </div>
 <!-- endblock -->
-        
+            
 
-        
-        
-    </div>
+            
+            
+        </div>
 
-    <script src="../../assets/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/js/main.min.js"></script>
-    <script src="../../js/mkdocs-charts-plugin.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
-    <script src="../../assets/js/vega-render.js" defer></script>
-    <script src="../../assets/js/modal.js" defer></script>
-    <script src="../../assets/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../../assets/js/packet-anim.js" defer></script>
-    <script src="../../search/main.js" defer></script>
+            <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../../assets/js/main.min.js""></script>
+                <script src="../../js/mkdocs-charts-plugin.js" defer></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
+                <script src="../../assets/js/vega-render.js" defer></script>
+                <script src="../../assets/js/modal.js" defer></script>
+                <script src="../../assets/js/bootstrap.bundle.min.js" defer></script>
+                <script src="../../assets/js/packet-anim.js" defer></script>
+                <script src="../../search/main.js" defer></script>
 
-</body>
+    </body>
 
 </html>
